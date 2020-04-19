@@ -24,7 +24,7 @@ public class ScriptableWeapons : ScriptableObject
 
     // In ticks
     public float reloadTime;
-    public float maxAmmo;
+    public int maxAmmo;
 
     // 50 is *really* high
     public float bulletVelocity;

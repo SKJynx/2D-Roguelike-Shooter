@@ -26,8 +26,8 @@ public class WeaponController : MonoBehaviour
     public float m_weaponAccuracy;
     public float m_critChance;
     public float m_reloadTime;
-    public float m_currentAmmo;
-    public float m_maxAmmo;
+    public int m_currentAmmo;
+    public int m_maxAmmo;
     public float m_fireRate;
     public float m_bulletSpeed;
     public float m_critMultiplier;
