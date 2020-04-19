@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class BulletScript : MonoBehaviour
 {
+
+    [SerializeField]
+    GameObject floatingDamageText;
     public float m_bulletDamage;
+
+    TextMesh textMesh;
 
     // Bullet's lifetime in seconds.
     [SerializeField]
@@ -12,6 +17,7 @@ public class BulletScript : MonoBehaviour
 
     void Start()
     {
+        textMesh = floatingDamageText.GetComponent<TextMesh>();
         Invoke("DestroySelf", bulletLifetime);
     }
 
@@ -24,10 +30,10 @@ public class BulletScript : MonoBehaviour
     {
         if (collision.tag != "Player" && collision.tag != "Item")
         {
+   
             collision.gameObject.GetComponent<HealthManager>().health -= m_bulletDamage;
             PlayerStatsManager.playerDamageDealt += (int)m_bulletDamage;
             PlayerStatsManager.playerComboDamage += (int)m_bulletDamage;
-
             DestroySelf();
         }
 

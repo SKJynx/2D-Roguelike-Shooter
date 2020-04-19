@@ -23,8 +23,6 @@ public class ItemPickup : MonoBehaviour
     {
         if (other.GetComponentInChildren<WeaponController>() != null && other.GetComponent<PlayerController>().pickupIsActive == 1)
         {
-            print("this is a weapon with a ScriptableObject");
-
             if (itemType == ItemTypes.Weapon)
             {
                 WeaponController playerWeapon = other.GetComponentInChildren<WeaponController>();
