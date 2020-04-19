@@ -18,6 +18,8 @@ MonoBehaviour:
     type: 3}
   weaponFireSound: event:/Weapons/AM80 Rifle
   reloadSound: event:/Weapons/GenericReload
+  endReloadSound: event:/Weapons/GenericReload
+  weaponPickupSound: event:/Weapons/PistolReload_Generic
   weaponName: AM80 Rifle
   weaponDamage: 14
   weaponCost: 280

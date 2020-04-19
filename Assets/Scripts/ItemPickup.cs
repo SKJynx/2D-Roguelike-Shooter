@@ -6,7 +6,7 @@ public class ItemPickup : MonoBehaviour
 {
     SpriteRenderer sr;
 
-    public ScriptableWeapons sciptableWeapon;
+    public ScriptableWeapons scriptableWeapon;
 
 
     void Start()
@@ -15,7 +15,7 @@ public class ItemPickup : MonoBehaviour
 
         if (itemType == ItemTypes.Weapon)
         {
-            sr.sprite = this.sciptableWeapon.weaponSprite;
+            sr.sprite = this.scriptableWeapon.weaponSprite;
         }
     }
 
@@ -29,33 +29,35 @@ public class ItemPickup : MonoBehaviour
 
                 FMODUnity.RuntimeManager.PlayOneShot(playerWeapon.m_pickupSFX);
 
-                other.GetComponentInChildren<SpriteRenderer>().sprite = this.sciptableWeapon.weaponSprite;
+                other.GetComponentInChildren<SpriteRenderer>().sprite = this.scriptableWeapon.weaponSprite;
 
-                playerWeapon.m_weaponName = this.sciptableWeapon.weaponName;
+                playerWeapon.m_scriptableWeapon = this.scriptableWeapon;
 
-                playerWeapon.m_weaponDamage = this.sciptableWeapon.weaponDamage;
-                playerWeapon.m_weaponCost = this.sciptableWeapon.weaponCost;
-                playerWeapon.m_weaponAccuracy = this.sciptableWeapon.weaponAccuracy;
-                playerWeapon.m_critChance = this.sciptableWeapon.critChance;
-                playerWeapon.m_reloadTime = this.sciptableWeapon.reloadTime;
-                playerWeapon.m_maxAmmo = this.sciptableWeapon.maxAmmo;
-                playerWeapon.m_currentAmmo = this.sciptableWeapon.maxAmmo;
-                playerWeapon.m_fireRate = this.sciptableWeapon.fireRate;
-                playerWeapon.m_bulletSpeed = this.sciptableWeapon.bulletVelocity;
-                playerWeapon.m_autofire = this.sciptableWeapon.automatic;
-                playerWeapon.m_critMultiplier = this.sciptableWeapon.criticalMultiplier;
+                playerWeapon.m_weaponName = this.scriptableWeapon.weaponName;
+
+                playerWeapon.m_weaponDamage = this.scriptableWeapon.weaponDamage;
+                playerWeapon.m_weaponCost = this.scriptableWeapon.weaponCost;
+                playerWeapon.m_weaponAccuracy = this.scriptableWeapon.weaponAccuracy;
+                playerWeapon.m_critChance = this.scriptableWeapon.critChance;
+                playerWeapon.m_reloadTime = this.scriptableWeapon.reloadTime;
+                playerWeapon.m_maxAmmo = this.scriptableWeapon.maxAmmo;
+                playerWeapon.m_currentAmmo = this.scriptableWeapon.maxAmmo;
+                playerWeapon.m_fireRate = this.scriptableWeapon.fireRate;
+                playerWeapon.m_bulletSpeed = this.scriptableWeapon.bulletVelocity;
+                playerWeapon.m_autofire = this.scriptableWeapon.automatic;
+                playerWeapon.m_critMultiplier = this.scriptableWeapon.criticalMultiplier;
                 playerWeapon.m_remainingReloadTime = 0;
 
                 // Sound effects get passed through [FMODUnity.EventRef]
-                playerWeapon.m_fireSFX = this.sciptableWeapon.weaponFireSound;
-                playerWeapon.m_reloadSFX = this.sciptableWeapon.reloadSound;
-                playerWeapon.m_endReloadSFX = this.sciptableWeapon.endReloadSound;
-                playerWeapon.m_pickupSFX = this.sciptableWeapon.weaponPickupSound;
+                playerWeapon.m_fireSFX = this.scriptableWeapon.weaponFireSound;
+                playerWeapon.m_reloadSFX = this.scriptableWeapon.reloadSound;
+                playerWeapon.m_endReloadSFX = this.scriptableWeapon.endReloadSound;
+                playerWeapon.m_pickupSFX = this.scriptableWeapon.weaponPickupSound;
 
                 // Type of bullet the weapon shoots
-                playerWeapon.bulletPrefab = this.sciptableWeapon.bulletType;
+                playerWeapon.bulletPrefab = this.scriptableWeapon.bulletType;
 
-                playerWeapon.itemID = this.sciptableWeapon.itemID;
+                playerWeapon.itemID = this.scriptableWeapon.itemID;
             }
 
             Destroy(this.gameObject);

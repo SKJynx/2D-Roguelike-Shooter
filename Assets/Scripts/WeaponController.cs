@@ -5,6 +5,8 @@ using UnityEngine.InputSystem;
 
 public class WeaponController : MonoBehaviour
 {
+    public ScriptableWeapons m_scriptableWeapon;
+
     [FMODUnity.EventRef]
     public string m_fireSFX;
 

@@ -18,6 +18,8 @@ MonoBehaviour:
     type: 3}
   weaponFireSound: event:/Weapons/D29 Magnum
   reloadSound: event:/Weapons/PistolReload_Generic
+  endReloadSound: event:/Weapons/GenericReload
+  weaponPickupSound: event:/Weapons/PistolReload_Generic
   weaponName: D29 Magnum
   weaponDamage: 27
   weaponCost: 180

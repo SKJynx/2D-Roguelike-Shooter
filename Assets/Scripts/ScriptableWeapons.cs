@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 [CreateAssetMenu(fileName = "Weapon", menuName = "Items/Weapon", order = 1)]
 public class ScriptableWeapons : ScriptableObject
 {
+
+
     public Sprite weaponSprite;
     public GameObject bulletType;
 
@@ -52,6 +55,7 @@ public class ScriptableWeapons : ScriptableObject
         Laser,
         RocketLauncher,
         GrenadeLauncher,
+        Melee
     }
     public WeaponTypes weaponType;
 

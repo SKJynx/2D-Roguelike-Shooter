@@ -18,13 +18,15 @@ MonoBehaviour:
     type: 3}
   weaponFireSound: event:/Weapons/A8 Sidearm
   reloadSound: event:/Weapons/PistolReload_Generic
+  endReloadSound: event:/Weapons/GenericReload
+  weaponPickupSound: event:/Weapons/PistolReload_Generic
   weaponName: A8 Sidearm
   weaponDamage: 9
   weaponCost: 40
   weaponAccuracy: 0
   critChance: 7
   reloadTime: 65
-  maxAmmo: 14
+  maxAmmo: 17
   bulletVelocity: 17
   fireRate: 7
   criticalMultiplier: 1.8

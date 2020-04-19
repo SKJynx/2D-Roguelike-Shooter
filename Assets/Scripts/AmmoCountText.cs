@@ -9,8 +9,6 @@ public class AmmoCountText : MonoBehaviour
 
     int m_currentAmmo;
 
-    GameObject player;
-
     WeaponController weaponController;
 
     // Start is called before the first frame update
@@ -25,6 +23,15 @@ public class AmmoCountText : MonoBehaviour
     {
         m_currentAmmo = weaponController.m_currentAmmo;
 
-        m_ammoCount.text = $"{m_currentAmmo} | {weaponController.m_maxAmmo}";
+        if (weaponController.isEquipped != false)
+        {
+            m_ammoCount.text = $"{m_currentAmmo} | {weaponController.m_maxAmmo}";
+        }
+        else
+        {
+            m_ammoCount.text = $"Unarmed";
+        }
+
+
     }
 }

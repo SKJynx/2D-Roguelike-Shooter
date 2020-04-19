@@ -18,6 +18,8 @@ MonoBehaviour:
     type: 3}
   weaponFireSound: event:/Weapons/Jura K3 SMG
   reloadSound: event:/Weapons/SMGReload_Generic
+  endReloadSound: event:/Weapons/GenericReload
+  weaponPickupSound: event:/Weapons/PistolReload_Generic
   weaponName: Jura K3 SMG
   weaponDamage: 7
   weaponCost: 340

@@ -41,7 +41,15 @@ public class PlayerController : MonoBehaviour
 
     Animator anim;
 
+    PlayerInventory playerInventory;
+
+    WeaponController weaponController;
+
     float fixedDeltaTime;
+
+    int currentWeaponSlot;
+
+    int maxWeaponSlots;
 
     private void Awake()
     {
@@ -50,10 +58,12 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        currentWeaponSlot = 0;
+        maxWeaponSlots = 4;
+        weaponController = gameObject.GetComponentInChildren<WeaponController>();
+        playerInventory = this.GetComponent<PlayerInventory>();
         rb2d = GetComponent<Rigidbody2D>();
-
         anim = playerSprite.GetComponentInChildren<Animator>();
-
         playerAnimator = this.gameObject.GetComponent<Animator>();
     }
 
@@ -115,8 +125,6 @@ public class PlayerController : MonoBehaviour
 
             playerAnimator.Play("Player_Dodge", -1, 0);
             rb2d.velocity = new Vector2(movement.x, movement.y).normalized * dodgeSpeed;
-
-            print(rb2d.velocity);
         }
 
 
@@ -163,6 +171,10 @@ public class PlayerController : MonoBehaviour
         {
             Time.timeScale = 1.0f;
         }
+    }
+
+    public void OnSwitchWeaponNext()
+    {
     }
 
 }
