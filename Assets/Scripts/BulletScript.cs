@@ -6,10 +6,13 @@ public class BulletScript : MonoBehaviour
 {
     public float m_bulletDamage;
 
+    // Bullet's lifetime in seconds.
+    [SerializeField]
+    float bulletLifetime;
 
     void Start()
     {
-        Invoke("DestroySelf", 3.0f);
+        Invoke("DestroySelf", bulletLifetime);
     }
 
     void DestroySelf()
