@@ -29,6 +29,8 @@ public class WeaponController : MonoBehaviour
     [SerializeField]
     GameObject firingAnimation;
 
+    PlayerInventory playerInventory;
+
     public string m_weaponName;
 
     public float m_weaponDamage;
@@ -47,7 +49,12 @@ public class WeaponController : MonoBehaviour
 
     float m_fireTimer;
 
+    public int m_equippedAmmo;
+    int m_ammoToLoad;
+
     public int itemID;
+
+    public int m_currentAmmoPool;
 
     Animator anim;
     Animator firingAnimator;
@@ -58,6 +65,7 @@ public class WeaponController : MonoBehaviour
 
         canReload = true;
 
+        playerInventory = GetComponentInParent<PlayerInventory>();
         sr = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
         firingAnimator = firingAnimation.GetComponentInChildren<Animator>();
@@ -105,17 +113,81 @@ public class WeaponController : MonoBehaviour
         itemID = this.m_scriptableWeapon.itemID;
     }
 
+
+    //When called, sets the ammo type for the currently equipped weapon to get and match the player's inventory amount.
+    public void GetAmmo()
+    {
+        if (m_scriptableWeapon.ammoType == ScriptableWeapons.AmmoType.Light)
+        {
+            m_equippedAmmo = playerInventory.ammoLightCount;
+        }
+
+        if (m_scriptableWeapon.ammoType == ScriptableWeapons.AmmoType.Light)
+        {
+            m_equippedAmmo = playerInventory.ammoLightCount;
+        }
+
+        if (m_scriptableWeapon.ammoType == ScriptableWeapons.AmmoType.Magnum)
+        {
+            m_equippedAmmo = playerInventory.ammoMagnumCount;
+        }
+
+        if (m_scriptableWeapon.ammoType == ScriptableWeapons.AmmoType.Assault)
+        {
+            m_equippedAmmo = playerInventory.ammoAssaultCount;
+        }
+
+        if (m_scriptableWeapon.ammoType == ScriptableWeapons.AmmoType.Heavy)
+        {
+            m_equippedAmmo = playerInventory.ammoHeavyCount;
+        }
+
+        if (m_scriptableWeapon.ammoType == ScriptableWeapons.AmmoType.Shell)
+        {
+            m_equippedAmmo = playerInventory.ammoShellCount;
+        }
+
+        if (m_scriptableWeapon.ammoType == ScriptableWeapons.AmmoType.Explosive)
+        {
+            m_equippedAmmo = playerInventory.ammoExplosiveCount;
+        }
+
+        if (m_scriptableWeapon.ammoType == ScriptableWeapons.AmmoType.Energy)
+        {
+            m_equippedAmmo = playerInventory.ammoEnergyCount;
+        }
+    }
+
+
+    //When called, if the current assigned weapon name is not the name of the scriptable weapon's name, refresh the values to match.
     public void CheckCurrentWeapon()
     {
-        if (m_weaponName != this.m_scriptableWeapon.name)
+        if (m_scriptableWeapon != null)
         {
-            GetScriptableValues();
+            isEquipped = true;
         }
+        else
+        {
+            isEquipped = false;
+        }
+
+        if (m_scriptableWeapon != null)
+        {
+            if (m_weaponName != this.m_scriptableWeapon.name)
+            {
+                print("Changed weapon");
+                GetScriptableValues();
+            }
+
+        }
+
     }
 
     void Update()
     {
+        GetAmmo();
 
+        CheckCurrentWeapon();
 
         // Autofire
         if (m_fireTimer < 0 && m_currentAmmo > 0 && m_remainingReloadTime < 0 && m_autofire == true && gameObject.GetComponentInParent<PlayerController>().isHolding == 1)
@@ -125,14 +197,7 @@ public class WeaponController : MonoBehaviour
             FireBullet();
         }
 
-        if (sr.sprite != null)
-        {
-            isEquipped = true;
-        }
-        else
-        {
-            isEquipped = false;
-        }
+
     }
 
     public void shootWeapon()
@@ -149,7 +214,7 @@ public class WeaponController : MonoBehaviour
 
         }
 
-        if (m_currentAmmo == 0 && canReload == true)
+        if (m_currentAmmo == 0 && canReload == true && m_ammoToLoad < m_equippedAmmo)
         {
             StartReload();
         }
@@ -158,7 +223,11 @@ public class WeaponController : MonoBehaviour
 
     void OnReload()
     {
-        if (canReload == true && m_currentAmmo < m_maxAmmo)
+        GetAmmo();
+        m_ammoToLoad = m_maxAmmo - m_currentAmmo;
+
+
+        if (canReload == true && m_currentAmmo < m_maxAmmo && m_ammoToLoad < m_equippedAmmo)
         {
             StartReload();
         }
@@ -175,9 +244,49 @@ public class WeaponController : MonoBehaviour
 
     void FinishReload()
     {
+
         FMODUnity.RuntimeManager.PlayOneShot(m_endReloadSFX);
+
+        if (m_scriptableWeapon.ammoType == ScriptableWeapons.AmmoType.Light)
+        {
+            playerInventory.ammoLightCount -= m_ammoToLoad;
+        }
+
+        if (m_scriptableWeapon.ammoType == ScriptableWeapons.AmmoType.Magnum)
+        {
+            playerInventory.ammoMagnumCount -= m_ammoToLoad;
+        }
+
+        if (m_scriptableWeapon.ammoType == ScriptableWeapons.AmmoType.Assault)
+        {
+            playerInventory.ammoAssaultCount -= m_ammoToLoad;
+        }
+
+        if (m_scriptableWeapon.ammoType == ScriptableWeapons.AmmoType.Heavy)
+        {
+            playerInventory.ammoHeavyCount -= m_ammoToLoad;
+        }
+
+        if (m_scriptableWeapon.ammoType == ScriptableWeapons.AmmoType.Shell)
+        {
+            playerInventory.ammoShellCount -= m_ammoToLoad;
+        }
+
+        if (m_scriptableWeapon.ammoType == ScriptableWeapons.AmmoType.Explosive)
+        {
+            playerInventory.ammoExplosiveCount -= m_ammoToLoad;
+        }
+
+        if (m_scriptableWeapon.ammoType == ScriptableWeapons.AmmoType.Energy)
+        {
+            playerInventory.ammoEnergyCount -= m_ammoToLoad;
+        }
+
+
         m_currentAmmo = m_maxAmmo;
         canReload = true;
+
+        GetAmmo();
     }
 
     void FireBullet()

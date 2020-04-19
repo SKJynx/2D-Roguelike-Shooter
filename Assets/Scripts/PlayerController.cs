@@ -79,6 +79,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        AddAmmoCheat();
 
         // EXPERIMENTAL CODE  ------------
         Time.fixedDeltaTime = this.fixedDeltaTime * Time.timeScale;
@@ -176,14 +177,19 @@ public class PlayerController : MonoBehaviour
 
     public void OnSwitchWeaponNext()
     {
-        if (currentWeaponSlot < playerInventory.scriptabeWeaponSlot.Count)
+        if (currentWeaponSlot < playerInventory.scriptabeWeaponSlot.Count - 1)
         {
-            currentWeaponSlot++;
+            if (currentWeaponSlot != maxWeaponSlots)
+            {
+                currentWeaponSlot++;
+            }
+            else
+            {
+                currentWeaponSlot = 0;
+            }
             weaponController.m_scriptableWeapon = playerInventory.scriptabeWeaponSlot[currentWeaponSlot];
             weaponController.GetScriptableValues();
             weaponController.CheckCurrentWeapon();
-
-
         }
     }
 
@@ -191,7 +197,14 @@ public class PlayerController : MonoBehaviour
     {
         if (currentWeaponSlot > 0)
         {
-            currentWeaponSlot--;
+            if (currentWeaponSlot != 0)
+            {
+                currentWeaponSlot--;
+            }
+            else
+            {
+                currentWeaponSlot = playerInventory.scriptabeWeaponSlot.Count;
+            }
             weaponController.m_scriptableWeapon = playerInventory.scriptabeWeaponSlot[currentWeaponSlot];
             weaponController.GetScriptableValues();
             weaponController.CheckCurrentWeapon();
@@ -199,4 +212,22 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+
+    // DEBUG TOOLS
+
+    void AddAmmoCheat()
+    {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            playerInventory.ammoLightCount += 300;
+            playerInventory.ammoMagnumCount += 60;
+            playerInventory.ammoHeavyCount += 800;
+            playerInventory.ammoAssaultCount += 500;
+            playerInventory.ammoSniperCount += 80;
+            playerInventory.ammoShellCount += 140;
+            playerInventory.ammoExplosiveCount += 5;
+            playerInventory.ammoEnergyCount += 1000;
+        }
+
+    }
 }

@@ -24,14 +24,15 @@ public class BulletScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision != null && collision.tag != "Player" && collision.tag != "Item")
+        if (collision != null)
         {
-   
-            collision.gameObject.GetComponent<HealthManager>().health -= m_bulletDamage;
-            PlayerStatsManager.playerDamageDealt += (int)m_bulletDamage;
-            PlayerStatsManager.playerComboDamage += (int)m_bulletDamage;
-            DestroySelf();
+            if (collision.tag != "Player" && collision.tag != "Item")
+            {
+                collision.gameObject.GetComponent<HealthManager>().health -= m_bulletDamage;
+                PlayerStatsManager.playerDamageDealt += (int)m_bulletDamage;
+                PlayerStatsManager.playerComboDamage += (int)m_bulletDamage;
+                DestroySelf();
+            }
         }
-
     }
 }

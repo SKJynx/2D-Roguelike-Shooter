@@ -1557,7 +1557,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ee8dbefb88777b428b3c82a5f93bcec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scriptabeWeaponSlot: []
+  scriptabeWeaponSlot:
+  - {fileID: 11400000, guid: 7ff43a8e5bb415d459607da324598dea, type: 2}
+  - {fileID: 11400000, guid: 6ef95178d98547e4fade720a79d23345, type: 2}
+  - {fileID: 11400000, guid: 2ad34e3f5cd48d947a29b12c7ae3f3a2, type: 2}
+  - {fileID: 11400000, guid: 30ad360cc4019ad40aef106d70ab3732, type: 2}
+  - {fileID: 11400000, guid: 25d56c958d18d194ba9d85eb061b4098, type: 2}
 --- !u!95 &1106085956
 Animator:
   serializedVersion: 3
@@ -2052,11 +2057,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: A8 Sidearm
       objectReference: {fileID: 0}
-    - target: {fileID: 3499103078648389181, guid: 3f83e407d64080142a5faa75cb1e1159,
-        type: 3}
-      propertyPath: m_TagString
-      value: Item
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f83e407d64080142a5faa75cb1e1159, type: 3}
 --- !u!1001 &3255770008057496200
@@ -2139,11 +2139,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Magnum
-      objectReference: {fileID: 0}
-    - target: {fileID: 7316608260739270787, guid: 6064c4eacb315c64db44f8bf308d9ce4,
-        type: 3}
-      propertyPath: m_TagString
-      value: Item
       objectReference: {fileID: 0}
     - target: {fileID: 7316608260739270844, guid: 6064c4eacb315c64db44f8bf308d9ce4,
         type: 3}

@@ -7,7 +7,6 @@ using UnityEngine;
 public class ScriptableWeapons : ScriptableObject
 {
 
-
     public Sprite weaponSprite;
     public GameObject bulletType;
 
@@ -35,7 +34,7 @@ public class ScriptableWeapons : ScriptableObject
 
     // 50 is *really* high
     public float bulletVelocity;
-    
+
     // In ticks 60 ticks = 1 sec
     public float fireRate;
     public float criticalMultiplier;
@@ -47,17 +46,33 @@ public class ScriptableWeapons : ScriptableObject
     public enum WeaponTypes
     {
         Pistol,
+        Magnum,
         SMG,
         Shotgun,
         Rifle,
-        Heavy,
         Sniper,
-        Laser,
+        Heavy,
+        Energy,
         RocketLauncher,
         GrenadeLauncher,
         Melee
     }
     public WeaponTypes weaponType;
+
+    public enum AmmoType
+    {
+        Light,
+        Magnum,
+        Assault,
+        Heavy,
+        Sniper,
+        Explosive,
+        Shell,
+        Energy,
+        Grenade,
+        None
+    }
+    public AmmoType ammoType;
 
 }
 

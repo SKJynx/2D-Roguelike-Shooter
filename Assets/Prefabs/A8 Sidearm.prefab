@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3499103078648389121}
   m_Layer: 0
   m_Name: A8 Sidearm
-  m_TagString: ItemWeapon
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
