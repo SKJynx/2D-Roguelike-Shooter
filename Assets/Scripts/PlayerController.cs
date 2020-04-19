@@ -20,6 +20,10 @@ public class PlayerController : MonoBehaviour
     public float isHolding;
 
     public float pickupIsActive;
+    [SerializeField]
+    float ability1IsActive;
+    [SerializeField]
+    float slowMotionAmount;
 
     [SerializeField]
     GameObject reticle;
@@ -37,6 +41,12 @@ public class PlayerController : MonoBehaviour
 
     Animator anim;
 
+    float fixedDeltaTime;
+
+    private void Awake()
+    {
+        this.fixedDeltaTime = Time.fixedDeltaTime;
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -59,6 +69,12 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        // EXPERIMENTAL CODE  ------------
+        Time.fixedDeltaTime = this.fixedDeltaTime * Time.timeScale;
+
+        SlowMotionAbility();
+        // -------------------------------
+
         FixWeaponOrientation();
         LookAtReticle();
 
@@ -80,6 +96,12 @@ public class PlayerController : MonoBehaviour
         {
             gameObject.GetComponentInChildren<WeaponController>().shootWeapon();
         }
+
+    }
+
+    void OnAbility1(InputValue value)
+    {
+        ability1IsActive = value.Get<float>();
 
     }
 
@@ -128,5 +150,19 @@ public class PlayerController : MonoBehaviour
 
     }
 
+
+    //Experimental
+    void SlowMotionAbility()
+    {
+
+        if (ability1IsActive == 1)
+        {
+            Time.timeScale = slowMotionAmount;
+        }
+        else
+        {
+            Time.timeScale = 1.0f;
+        }
+    }
 
 }

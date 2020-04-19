@@ -21,7 +21,7 @@ public class ItemPickup : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D other)
     {
-        if (other.GetComponentInChildren<WeaponController>() != null && other.GetComponent<PlayerController>().pickupIsActive == 1 && other.GetComponentInChildren<WeaponController>().isEquipped == false)
+        if (other.GetComponentInChildren<WeaponController>() != null && other.GetComponent<PlayerController>().pickupIsActive == 1)
         {
             print("this is a weapon with a ScriptableObject");
 
@@ -46,6 +46,7 @@ public class ItemPickup : MonoBehaviour
                 playerWeapon.m_bulletSpeed = this.sciptableWeapon.bulletVelocity;
                 playerWeapon.m_autofire = this.sciptableWeapon.automatic;
                 playerWeapon.m_critMultiplier = this.sciptableWeapon.criticalMultiplier;
+                playerWeapon.m_remainingReloadTime = 0;
 
                 // Sound effects get passed through [FMODUnity.EventRef]
                 playerWeapon.m_fireSFX = this.sciptableWeapon.weaponFireSound;
