@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class BulletScript : MonoBehaviour
 {
-
-    [SerializeField]
-    GameObject floatingDamageText;
     public float m_bulletDamage;
 
     TextMesh textMesh;
@@ -17,7 +14,6 @@ public class BulletScript : MonoBehaviour
 
     void Start()
     {
-        textMesh = floatingDamageText.GetComponent<TextMesh>();
         Invoke("DestroySelf", bulletLifetime);
     }
 

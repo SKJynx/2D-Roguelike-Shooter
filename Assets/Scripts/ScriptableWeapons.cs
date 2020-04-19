@@ -12,6 +12,10 @@ public class ScriptableWeapons : ScriptableObject
     public string weaponFireSound;
     [FMODUnity.EventRef]
     public string reloadSound;
+    [FMODUnity.EventRef]
+    public string endReloadSound;
+    [FMODUnity.EventRef]
+    public string weaponPickupSound;
 
     public string weaponName;
 

@@ -27,7 +27,7 @@ public class ItemPickup : MonoBehaviour
             {
                 WeaponController playerWeapon = other.GetComponentInChildren<WeaponController>();
 
-
+                FMODUnity.RuntimeManager.PlayOneShot(playerWeapon.m_pickupSFX);
 
                 other.GetComponentInChildren<SpriteRenderer>().sprite = this.sciptableWeapon.weaponSprite;
 
@@ -49,7 +49,10 @@ public class ItemPickup : MonoBehaviour
                 // Sound effects get passed through [FMODUnity.EventRef]
                 playerWeapon.m_fireSFX = this.sciptableWeapon.weaponFireSound;
                 playerWeapon.m_reloadSFX = this.sciptableWeapon.reloadSound;
+                playerWeapon.m_endReloadSFX = this.sciptableWeapon.endReloadSound;
+                playerWeapon.m_pickupSFX = this.sciptableWeapon.weaponPickupSound;
 
+                // Type of bullet the weapon shoots
                 playerWeapon.bulletPrefab = this.sciptableWeapon.bulletType;
 
                 playerWeapon.itemID = this.sciptableWeapon.itemID;

@@ -11,9 +11,17 @@ public class WeaponController : MonoBehaviour
     [FMODUnity.EventRef]
     public string m_reloadSFX;
 
+    [FMODUnity.EventRef]
+    public string m_endReloadSFX;
+
+    [FMODUnity.EventRef]
+    public string m_pickupSFX;
+
     SpriteRenderer sr;
 
     public bool isEquipped;
+    [SerializeField]
+    bool canReload;
 
     public GameObject bulletPrefab;
     [SerializeField]
@@ -45,6 +53,8 @@ public class WeaponController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        canReload = true;
+
         sr = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
         firingAnimator = firingAnimation.GetComponentInChildren<Animator>();
@@ -54,6 +64,11 @@ public class WeaponController : MonoBehaviour
     {
         m_fireTimer -= 1;
         m_remainingReloadTime -= 1;
+
+        if (m_remainingReloadTime < 0 && canReload == false)
+        {
+            FinishReload();
+        }
     }
 
     void Update()
@@ -90,25 +105,42 @@ public class WeaponController : MonoBehaviour
 
         }
 
-        if (m_currentAmmo == 0)
+        if (m_currentAmmo == 0 && canReload == true)
         {
-            OnReload();
+            StartReload();
         }
 
     }
 
     void OnReload()
     {
+        if (canReload == true && m_currentAmmo < m_maxAmmo)
+        {
+            StartReload();
+        }
+
+    }
+
+    void StartReload()
+    {
         FMODUnity.RuntimeManager.PlayOneShot(m_reloadSFX);
-        m_currentAmmo = m_maxAmmo;
+
+        canReload = false;
         m_remainingReloadTime = m_reloadTime;
+    }
+
+    void FinishReload()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot(m_endReloadSFX);
+        m_currentAmmo = m_maxAmmo;
+        canReload = true;
     }
 
     void FireBullet()
     {
         anim.Play("Player_Weapon_Fire", -1, 0);
         firingAnimator.Play("Weapon_Rifle_Fire", -1, 0);
-        
+
 
         GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity) as GameObject;
         {
@@ -135,9 +167,6 @@ public class WeaponController : MonoBehaviour
                 bullet.GetComponent<BulletScript>().m_bulletDamage = m_weaponDamage;
             }
 
-
-
-            //Debug.DrawLine(bullet.transform.position, target, Color.red, 1.0f);
         }
     }
 
