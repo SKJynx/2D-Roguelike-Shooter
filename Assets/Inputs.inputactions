@@ -27,7 +27,7 @@
                     "id": "58a3db2c-7066-460b-be5f-3ba72c37006f",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "Press"
                 },
                 {
                     "name": "Interact",

@@ -7,9 +7,14 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField]
     float maxSpeed;
+    [SerializeField]
+    float dodgeSpeed;
 
     [SerializeField]
     bool canInput;
+
+    public float dodgeTimer;
+    public float max_dodgeTimer;
 
     public bool facingRight = true;
     public float isHolding;
@@ -28,29 +33,34 @@ public class PlayerController : MonoBehaviour
 
     Rigidbody2D rb2d;
 
+    Animator playerAnimator;
+
     Animator anim;
 
     // Start is called before the first frame update
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+
         anim = playerSprite.GetComponentInChildren<Animator>();
- 
+
+        playerAnimator = this.gameObject.GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        FixWeaponOrientation();
-        LookAtReticle();
-
+        dodgeTimer -= 1;
 
         if (canInput == true)
         {
             rb2d.velocity = movement * maxSpeed;
-
-
         }
+    }
+
+    void Update()
+    {
+        FixWeaponOrientation();
+        LookAtReticle();
 
         anim.SetFloat("horizontalSpeed", Mathf.Abs(rb2d.velocity.x));
         anim.SetFloat("verticalSpeed", Mathf.Abs(rb2d.velocity.y));
@@ -70,6 +80,23 @@ public class PlayerController : MonoBehaviour
         {
             gameObject.GetComponentInChildren<WeaponController>().shootWeapon();
         }
+
+    }
+
+    public void OnDodge()
+    {
+        if (dodgeTimer < 0)
+        {
+            dodgeTimer = max_dodgeTimer;
+
+            canInput = false;
+
+            playerAnimator.Play("Player_Dodge", -1, 0);
+            rb2d.velocity = new Vector2(movement.x, movement.y).normalized * dodgeSpeed;
+
+            print(rb2d.velocity);
+        }
+
 
     }
 
@@ -100,4 +127,6 @@ public class PlayerController : MonoBehaviour
         heldItem.transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ);
 
     }
+
+
 }

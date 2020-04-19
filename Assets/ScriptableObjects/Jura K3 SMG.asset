@@ -17,7 +17,7 @@ MonoBehaviour:
   bulletType: {fileID: 2916614864245653124, guid: e7ee88d7e9c0a184a979131fe9ad50ab,
     type: 3}
   weaponFireSound: event:/Weapons/Jura K3 SMG
-  reloadSound: 
+  reloadSound: event:/Weapons/SMGReload_Generic
   weaponName: Jura K3 SMG
   weaponDamage: 7
   weaponCost: 340

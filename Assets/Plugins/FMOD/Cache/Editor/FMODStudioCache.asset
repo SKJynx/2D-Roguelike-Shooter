@@ -17,7 +17,7 @@ MonoBehaviour:
   lastModified: 637228445665537614
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &-6537618672088833684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33,7 +33,7 @@ MonoBehaviour:
   Path: event:/Weapons/GenericReload
   guid: d19fc9c144d41445bf9e0265d56e0c3b
   Banks:
-  - {fileID: -6731830102685485398}
+  - {fileID: -6510130270559051288}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -41,6 +41,24 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 299
+--- !u!114 &-6510130270559051288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD Roguelike Shooter/Roguelike Shooter FMOD/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637228460370097627
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-5468040955503091707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56,7 +74,7 @@ MonoBehaviour:
   Path: event:/Weapons/A8 Sidearm
   guid: 7bad693cfb14f94ba58dd124074845fc
   Banks:
-  - {fileID: -6731830102685485398}
+  - {fileID: -6510130270559051288}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -115,7 +133,7 @@ MonoBehaviour:
   Path: event:/Weapons/Jura K3 SMG
   guid: e169199297e2434ab99317717bf1e163
   Banks:
-  - {fileID: -6731830102685485398}
+  - {fileID: -6510130270559051288}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -156,7 +174,7 @@ MonoBehaviour:
   Path: event:/Weapons/D29 Magnum
   guid: b43760f5a3ee064dbf117423e25cc21e
   Banks:
-  - {fileID: -6731830102685485398}
+  - {fileID: -6510130270559051288}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -178,11 +196,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: FMOD Roguelike Shooter/Roguelike Shooter FMOD/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637228445666007600
+  lastModified: 637228460370557606
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 934
+    Value: 1034
   Exists: 1
 --- !u!114 &-745808125659230400
 MonoBehaviour:
@@ -216,19 +234,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: -2362292707110572994}
-  - {fileID: -6731830102685485398}
+  - {fileID: -6510130270559051288}
   EditorEvents:
   - {fileID: -5468040955503091707}
   - {fileID: -2590148973585628554}
   - {fileID: 8759623718591642627}
   - {fileID: -3684660993380522917}
   - {fileID: -6537618672088833684}
+  - {fileID: 5068197075852807914}
+  - {fileID: 5598187401404412479}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -6731830102685485398}
+  - {fileID: -6510130270559051288}
   StringsBanks:
   - {fileID: -2362292707110572994}
-  stringsBankWriteTime: 637228445666007600
+  stringsBankWriteTime: 637228460370557606
   cacheVersion: 3
 --- !u!114 &1547991355015828546
 MonoBehaviour:
@@ -248,6 +268,52 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &5068197075852807914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Weapons/PistolReload_Generic
+  m_EditorClassIdentifier: 
+  Path: event:/Weapons/PistolReload_Generic
+  guid: 7207ac6522816e4d9288c709ae689dbf
+  Banks:
+  - {fileID: -6510130270559051288}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 401
+--- !u!114 &5598187401404412479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Weapons/SMGReload_Generic
+  m_EditorClassIdentifier: 
+  Path: event:/Weapons/SMGReload_Generic
+  guid: e090cb55b4a0dc44a4c682237eaff418
+  Banks:
+  - {fileID: -6510130270559051288}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 600
 --- !u!114 &6306058708876771359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,7 +347,7 @@ MonoBehaviour:
   Path: event:/Weapons/AM80 Rifle
   guid: d67a5f5ac04f9a4381b998894900a841
   Banks:
-  - {fileID: -6731830102685485398}
+  - {fileID: -6510130270559051288}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1

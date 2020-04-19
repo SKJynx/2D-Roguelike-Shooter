@@ -17,7 +17,7 @@ MonoBehaviour:
   bulletType: {fileID: 2916614864245653124, guid: e7ee88d7e9c0a184a979131fe9ad50ab,
     type: 3}
   weaponFireSound: event:/Weapons/A8 Sidearm
-  reloadSound: 
+  reloadSound: event:/Weapons/PistolReload_Generic
   weaponName: A8 Sidearm
   weaponDamage: 9
   weaponCost: 40

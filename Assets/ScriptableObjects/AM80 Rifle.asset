@@ -17,7 +17,7 @@ MonoBehaviour:
   bulletType: {fileID: 2916614864245653124, guid: d1d07020bcff0eb438d1be79d74d935c,
     type: 3}
   weaponFireSound: event:/Weapons/AM80 Rifle
-  reloadSound: 
+  reloadSound: event:/Weapons/GenericReload
   weaponName: AM80 Rifle
   weaponDamage: 14
   weaponCost: 280

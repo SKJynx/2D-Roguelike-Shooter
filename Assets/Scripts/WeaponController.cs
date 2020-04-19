@@ -16,6 +16,8 @@ public class WeaponController : MonoBehaviour
     public bool isEquipped;
 
     public GameObject bulletPrefab;
+    [SerializeField]
+    GameObject firingAnimation;
 
     public string m_weaponName;
 
@@ -38,12 +40,14 @@ public class WeaponController : MonoBehaviour
     public int itemID;
 
     Animator anim;
+    Animator firingAnimator;
 
     // Start is called before the first frame update
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
+        firingAnimator = firingAnimation.GetComponentInChildren<Animator>();
     }
 
     void FixedUpdate()
@@ -103,6 +107,8 @@ public class WeaponController : MonoBehaviour
     void FireBullet()
     {
         anim.Play("Player_Weapon_Fire", -1, 0);
+        firingAnimator.Play("Weapon_Rifle_Fire", -1, 0);
+        
 
         GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity) as GameObject;
         {
