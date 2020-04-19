@@ -15,7 +15,7 @@ MonoBehaviour:
   SwitchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: FMOD Roguelike Shooter\Roguelike Shooter FMOD\Roguelike Shooter
+  sourceProjectPath: FMOD Roguelike Shooter/Roguelike Shooter FMOD/Roguelike Shooter
     FMOD.fspro
   sourceBankPath: FMOD Roguelike Shooter\Roguelike Shooter FMOD\Build
   SourceBankPathUnformatted: 

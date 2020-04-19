@@ -8,6 +8,11 @@ public class ScriptableWeapons : ScriptableObject
     public Sprite weaponSprite;
     public GameObject bulletType;
 
+    [FMODUnity.EventRef]
+    public string weaponFireSound;
+    [FMODUnity.EventRef]
+    public string reloadSound;
+
     public string weaponName;
 
     public float weaponDamage;
@@ -26,7 +31,6 @@ public class ScriptableWeapons : ScriptableObject
     
     // In ticks 60 ticks = 1 sec
     public float fireRate;
-
     public float criticalMultiplier;
 
     public bool automatic;

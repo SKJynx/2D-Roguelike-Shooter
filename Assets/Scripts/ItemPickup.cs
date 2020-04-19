@@ -23,12 +23,13 @@ public class ItemPickup : MonoBehaviour
     {
         if (other.GetComponentInChildren<WeaponController>() != null && other.GetComponent<PlayerController>().pickupIsActive == 1 && other.GetComponentInChildren<WeaponController>().isEquipped == false)
         {
+            print("this is a weapon with a ScriptableObject");
 
             if (itemType == ItemTypes.Weapon)
             {
                 WeaponController playerWeapon = other.GetComponentInChildren<WeaponController>();
 
-                print("this is a weapon with a ScriptableObject");
+
 
                 other.GetComponentInChildren<SpriteRenderer>().sprite = this.sciptableWeapon.weaponSprite;
 
@@ -45,6 +46,10 @@ public class ItemPickup : MonoBehaviour
                 playerWeapon.m_bulletSpeed = this.sciptableWeapon.bulletVelocity;
                 playerWeapon.m_autofire = this.sciptableWeapon.automatic;
                 playerWeapon.m_critMultiplier = this.sciptableWeapon.criticalMultiplier;
+
+                // Sound effects get passed through [FMODUnity.EventRef]
+                playerWeapon.m_fireSFX = this.sciptableWeapon.weaponFireSound;
+                playerWeapon.m_reloadSFX = this.sciptableWeapon.reloadSound;
 
                 playerWeapon.bulletPrefab = this.sciptableWeapon.bulletType;
 

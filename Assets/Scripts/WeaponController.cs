@@ -5,8 +5,11 @@ using UnityEngine.InputSystem;
 
 public class WeaponController : MonoBehaviour
 {
-    [SerializeField]
-    GameObject reticle;
+    [FMODUnity.EventRef]
+    public string m_fireSFX;
+
+    [FMODUnity.EventRef]
+    public string m_reloadSFX;
 
     SpriteRenderer sr;
 
@@ -27,8 +30,6 @@ public class WeaponController : MonoBehaviour
     public float m_bulletSpeed;
     public float m_critMultiplier;
     public bool m_autofire;
-    
-
 
     public float m_remainingReloadTime;
 
@@ -94,6 +95,7 @@ public class WeaponController : MonoBehaviour
 
     void OnReload()
     {
+        FMODUnity.RuntimeManager.PlayOneShot(m_reloadSFX);
         m_currentAmmo = m_maxAmmo;
         m_remainingReloadTime = m_reloadTime;
     }
