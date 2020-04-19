@@ -79,6 +79,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+
         // EXPERIMENTAL CODE  ------------
         Time.fixedDeltaTime = this.fixedDeltaTime * Time.timeScale;
 
@@ -175,6 +176,27 @@ public class PlayerController : MonoBehaviour
 
     public void OnSwitchWeaponNext()
     {
+        if (currentWeaponSlot < playerInventory.scriptabeWeaponSlot.Count)
+        {
+            currentWeaponSlot++;
+            weaponController.m_scriptableWeapon = playerInventory.scriptabeWeaponSlot[currentWeaponSlot];
+            weaponController.GetScriptableValues();
+            weaponController.CheckCurrentWeapon();
+
+
+        }
+    }
+
+    public void OnSwitchWeaponPrevious()
+    {
+        if (currentWeaponSlot > 0)
+        {
+            currentWeaponSlot--;
+            weaponController.m_scriptableWeapon = playerInventory.scriptabeWeaponSlot[currentWeaponSlot];
+            weaponController.GetScriptableValues();
+            weaponController.CheckCurrentWeapon();
+
+        }
     }
 
 }

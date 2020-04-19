@@ -55,6 +55,7 @@ public class WeaponController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         canReload = true;
 
         sr = GetComponent<SpriteRenderer>();
@@ -73,8 +74,49 @@ public class WeaponController : MonoBehaviour
         }
     }
 
+    public void GetScriptableValues()
+    {
+        sr.sprite = this.m_scriptableWeapon.weaponSprite;
+
+        m_weaponName = this.m_scriptableWeapon.weaponName;
+
+        m_weaponDamage = this.m_scriptableWeapon.weaponDamage;
+        m_weaponCost = this.m_scriptableWeapon.weaponCost;
+        m_weaponAccuracy = this.m_scriptableWeapon.weaponAccuracy;
+        m_critChance = this.m_scriptableWeapon.critChance;
+        m_reloadTime = this.m_scriptableWeapon.reloadTime;
+        m_maxAmmo = this.m_scriptableWeapon.maxAmmo;
+        m_currentAmmo = this.m_scriptableWeapon.maxAmmo;
+        m_fireRate = this.m_scriptableWeapon.fireRate;
+        m_bulletSpeed = this.m_scriptableWeapon.bulletVelocity;
+        m_autofire = this.m_scriptableWeapon.automatic;
+        m_critMultiplier = this.m_scriptableWeapon.criticalMultiplier;
+        m_remainingReloadTime = 0;
+
+        // Sound effects get passed through [FMODUnity.EventRef]
+        m_fireSFX = this.m_scriptableWeapon.weaponFireSound;
+        m_reloadSFX = this.m_scriptableWeapon.reloadSound;
+        m_endReloadSFX = this.m_scriptableWeapon.endReloadSound;
+        m_pickupSFX = this.m_scriptableWeapon.weaponPickupSound;
+
+        // Type of bullet the weapon shoots
+        bulletPrefab = this.m_scriptableWeapon.bulletType;
+
+        itemID = this.m_scriptableWeapon.itemID;
+    }
+
+    public void CheckCurrentWeapon()
+    {
+        if (m_weaponName != this.m_scriptableWeapon.name)
+        {
+            GetScriptableValues();
+        }
+    }
+
     void Update()
     {
+
+
         // Autofire
         if (m_fireTimer < 0 && m_currentAmmo > 0 && m_remainingReloadTime < 0 && m_autofire == true && gameObject.GetComponentInParent<PlayerController>().isHolding == 1)
         {

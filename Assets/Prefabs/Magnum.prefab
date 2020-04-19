@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb0f22639a9a1bd4bbc128e49957e0f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sciptableWeapon: {fileID: 11400000, guid: 2ad34e3f5cd48d947a29b12c7ae3f3a2, type: 2}
+  scriptableWeapon: {fileID: 11400000, guid: 2ad34e3f5cd48d947a29b12c7ae3f3a2, type: 2}
   itemType: 0
 --- !u!61 &7316608260739270847
 BoxCollider2D:

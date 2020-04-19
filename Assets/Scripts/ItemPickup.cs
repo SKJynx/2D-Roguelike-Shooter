@@ -30,34 +30,13 @@ public class ItemPickup : MonoBehaviour
                 FMODUnity.RuntimeManager.PlayOneShot(playerWeapon.m_pickupSFX);
 
                 other.GetComponentInChildren<SpriteRenderer>().sprite = this.scriptableWeapon.weaponSprite;
-
                 playerWeapon.m_scriptableWeapon = this.scriptableWeapon;
 
-                playerWeapon.m_weaponName = this.scriptableWeapon.weaponName;
+                playerWeapon.GetScriptableValues();
+                playerWeapon.CheckCurrentWeapon();
 
-                playerWeapon.m_weaponDamage = this.scriptableWeapon.weaponDamage;
-                playerWeapon.m_weaponCost = this.scriptableWeapon.weaponCost;
-                playerWeapon.m_weaponAccuracy = this.scriptableWeapon.weaponAccuracy;
-                playerWeapon.m_critChance = this.scriptableWeapon.critChance;
-                playerWeapon.m_reloadTime = this.scriptableWeapon.reloadTime;
-                playerWeapon.m_maxAmmo = this.scriptableWeapon.maxAmmo;
-                playerWeapon.m_currentAmmo = this.scriptableWeapon.maxAmmo;
-                playerWeapon.m_fireRate = this.scriptableWeapon.fireRate;
-                playerWeapon.m_bulletSpeed = this.scriptableWeapon.bulletVelocity;
-                playerWeapon.m_autofire = this.scriptableWeapon.automatic;
-                playerWeapon.m_critMultiplier = this.scriptableWeapon.criticalMultiplier;
-                playerWeapon.m_remainingReloadTime = 0;
 
-                // Sound effects get passed through [FMODUnity.EventRef]
-                playerWeapon.m_fireSFX = this.scriptableWeapon.weaponFireSound;
-                playerWeapon.m_reloadSFX = this.scriptableWeapon.reloadSound;
-                playerWeapon.m_endReloadSFX = this.scriptableWeapon.endReloadSound;
-                playerWeapon.m_pickupSFX = this.scriptableWeapon.weaponPickupSound;
-
-                // Type of bullet the weapon shoots
-                playerWeapon.bulletPrefab = this.scriptableWeapon.bulletType;
-
-                playerWeapon.itemID = this.scriptableWeapon.itemID;
+  
             }
 
             Destroy(this.gameObject);
