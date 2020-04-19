@@ -22,6 +22,9 @@ public class BulletScript : MonoBehaviour
         if (collision.tag != "Player" && collision.tag != "Item")
         {
             collision.gameObject.GetComponent<HealthManager>().health -= m_bulletDamage;
+            PlayerStatsManager.playerDamageDealt += (int)m_bulletDamage;
+            PlayerStatsManager.playerComboDamage += (int)m_bulletDamage;
+
             DestroySelf();
         }
 
