@@ -185,7 +185,11 @@ public class WeaponController : MonoBehaviour
 
     void Update()
     {
-        GetAmmo();
+        if (m_scriptableWeapon != null)
+        {
+            GetAmmo();
+        }
+
 
         CheckCurrentWeapon();
 
