@@ -42,25 +42,19 @@ public class ItemPickup : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D other)
     {
-        if (other.GetComponentInChildren<WeaponController>() != null && other.GetComponent<PlayerController>().pickupIsActive == 1)
+        PlayerInventory playerInventory = other.GetComponent<PlayerInventory>();
+        PlayerController playerController = other.GetComponent<PlayerController>();
+        WeaponController playerWeapon = other.GetComponentInChildren<WeaponController>();
+
+        if (other.GetComponentInChildren<WeaponController>() != null && playerController.pickupIsActive == 1 && playerInventory.savedWeapon[playerController.currentWeaponSlot].scriptableWeapon == null)
         {
             if (itemType == ItemTypes.Weapon)
             {
-                PlayerInventory playerInventory = other.GetComponent<PlayerInventory>();
-                PlayerController playerController = other.GetComponent<PlayerController>();
-                WeaponController playerWeapon = other.GetComponentInChildren<WeaponController>();
-
                 FMODUnity.RuntimeManager.PlayOneShot(playerWeapon.m_pickupSFX);
 
                 playerInventory.savedWeapon[playerController.currentWeaponSlot].scriptableWeapon = this.scriptableWeapon;
 
                 playerWeapon.m_currentAmmo = this.scriptableWeapon.maxAmmo;
-
-                playerWeapon.GetAmmo();
-                playerWeapon.GetScriptableValues();
-                playerWeapon.CheckCurrentWeapon();
-
-
             }
 
             Destroy(this.gameObject);
