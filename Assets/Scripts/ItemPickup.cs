@@ -8,7 +8,6 @@ public class ItemPickup : MonoBehaviour
 
     public ScriptableWeapons scriptableWeapon;
 
-
     void Start()
     {
         //Checks ItemTypes enum to ensure an item always gets tagged if the enum is set
@@ -16,7 +15,7 @@ public class ItemPickup : MonoBehaviour
         {
             switch (itemType)
             {
-                case ItemTypes.Weapon: 
+                case ItemTypes.Weapon:
                     gameObject.tag = "Item";
                     break;
                 case ItemTypes.Healing:
@@ -47,17 +46,19 @@ public class ItemPickup : MonoBehaviour
         {
             if (itemType == ItemTypes.Weapon)
             {
+                PlayerInventory playerInventory = other.GetComponent<PlayerInventory>();
+                PlayerController playerController = other.GetComponent<PlayerController>();
                 WeaponController playerWeapon = other.GetComponentInChildren<WeaponController>();
 
                 FMODUnity.RuntimeManager.PlayOneShot(playerWeapon.m_pickupSFX);
 
-                playerWeapon.m_scriptableWeapon = this.scriptableWeapon;
+                playerInventory.scriptableWeaponSlot[playerController.currentWeaponSlot] = this.scriptableWeapon;
 
                 playerWeapon.GetAmmo();
                 playerWeapon.GetScriptableValues();
                 playerWeapon.CheckCurrentWeapon();
 
-  
+
             }
 
             Destroy(this.gameObject);

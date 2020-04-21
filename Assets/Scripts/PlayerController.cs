@@ -214,11 +214,14 @@ public class PlayerController : MonoBehaviour
 
     public void OnSwitchWeaponPrevious()
     {
-        playerInventory.scriptableWeaponSlot[currentWeaponSlot] = weaponController.m_scriptableWeapon;
-        weaponController.m_scriptableWeapon = weaponController.m_Unarmed;
-        weaponController.GetScriptableValues();
-
-        currentWeaponSlot--;
+        if (currentWeaponSlot > 0)
+        {
+            currentWeaponSlot--;
+        }
+        else
+        {
+            currentWeaponSlot = maxWeaponSlots - 1;
+        }
 
         //if (playerInventory.scriptableWeaponSlot[currentWeaponSlot] == null && weaponController.m_scriptableWeapon != null)
         //{
