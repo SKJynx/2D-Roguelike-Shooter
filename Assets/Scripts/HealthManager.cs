@@ -14,8 +14,6 @@ public class HealthManager : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         rb2d = GetComponent<Rigidbody2D>();
-
-        health = 100;
     }
 
     void Update()

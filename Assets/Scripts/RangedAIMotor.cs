@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class RangedAIMotor : MonoBehaviour
 {
+    HealthManager healthManager;
+
     [SerializeField]
     ScriptableEnemies m_scriptableEnemies;
     [SerializeField]
@@ -33,8 +35,9 @@ public class RangedAIMotor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        healthManager = GetComponent<HealthManager>();
+
         m_timeToReload = 0;
-        
 
         m_attackDamage = m_scriptableEnemies.attackDamage;
         m_projectileSpeed = m_scriptableEnemies.attackSpeed;
@@ -42,6 +45,8 @@ public class RangedAIMotor : MonoBehaviour
         m_attackCooldown = m_scriptableEnemies.attackFrequency;
 
         m_target = GameObject.FindGameObjectWithTag("Player");
+
+        healthManager.health = m_scriptableEnemies.health;
     }
 
 
