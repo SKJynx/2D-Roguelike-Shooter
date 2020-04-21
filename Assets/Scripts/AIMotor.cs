@@ -6,6 +6,7 @@ public class AIMotor : MonoBehaviour
 {
     Rigidbody2D rb2d;
 
+    public bool canMove;
 
     [SerializeField]
     float maxSpeed;
@@ -15,6 +16,7 @@ public class AIMotor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        canMove = true;
         rb2d = GetComponent<Rigidbody2D>();
         getPlayerScript = GetComponent<GetPlayer>();
     }
@@ -22,6 +24,10 @@ public class AIMotor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rb2d.velocity = getPlayerScript.getPlayerPos.normalized * maxSpeed;
+        if (canMove == true)
+        {
+            rb2d.velocity = getPlayerScript.getPlayerPos.normalized * maxSpeed;
+        }
+
     }
 }

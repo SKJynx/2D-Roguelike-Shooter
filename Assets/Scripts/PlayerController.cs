@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     bool canInput;
 
+    public bool canBeHurt;
+
     public float dodgeTimer;
     public float max_dodgeTimer;
 
@@ -58,6 +60,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        canBeHurt = true;
         currentWeaponSlot = 0;
         maxWeaponSlots = 4;
         weaponController = gameObject.GetComponentInChildren<WeaponController>();
@@ -108,13 +111,16 @@ public class PlayerController : MonoBehaviour
         {
             gameObject.GetComponentInChildren<WeaponController>().shootWeapon();
         }
+    }
 
+    public void OnMeleeSwing()
+    {
+        print("swung");
     }
 
     void OnAbility1(InputValue value)
     {
         ability1IsActive = value.Get<float>();
-
     }
 
     public void OnDodge()
@@ -128,8 +134,6 @@ public class PlayerController : MonoBehaviour
             playerAnimator.Play("Player_Dodge", -1, 0);
             rb2d.velocity = new Vector2(movement.x, movement.y).normalized * dodgeSpeed;
         }
-
-
     }
 
     public void OnInteract(InputValue value)
@@ -210,6 +214,15 @@ public class PlayerController : MonoBehaviour
             weaponController.m_currentAmmo = playerInventory.savedWeapon[currentWeaponSlot].ammoCount;
         }
 
+    }
+
+    public void OnDropItem()
+    {
+        // Simple destroys the current ScriptableWeapon enabled in the inventory 
+        if(playerInventory.savedWeapon[currentWeaponSlot].scriptableWeapon != null)
+        {
+            playerInventory.savedWeapon[currentWeaponSlot].scriptableWeapon = null;
+        }
     }
 
 

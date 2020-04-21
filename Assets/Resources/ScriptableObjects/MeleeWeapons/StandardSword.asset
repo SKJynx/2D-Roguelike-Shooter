@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 134b0661d75a91841854264013b44199, type: 3}
+  m_Name: StandardSword
+  m_EditorClassIdentifier: 
+  weaponSprite: {fileID: -3417926838352388216, guid: 5fe8ef938a639884488da52e24e6d8c9,
+    type: 3}
+  swingSFX: 
+  deflectSFX: 
+  impactSFX: 
+  weaponPickupSound: 
+  weaponName: StandardSword
+  weaponDamage: 2
+  weaponCost: 50
+  critChance: 0
+  deflectionVelocity: 5
+  swingCooldown: 20
+  itemID: 200
+  weaponType: 1

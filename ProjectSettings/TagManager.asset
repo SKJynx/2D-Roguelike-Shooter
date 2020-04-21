@@ -8,6 +8,8 @@ TagManager:
   - Item
   - PlayerCamera
   - Bullet
+  - Enemy
+  - Deflect
   layers:
   - Default
   - TransparentFX

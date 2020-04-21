@@ -1,0 +1,596 @@
+fileFormatVersion: 2
+guid: 5fe8ef938a639884488da52e24e6d8c9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3417926838352388216
+    second: EvolvingSword_0
+  - first:
+      213: 7255392027033291222
+    second: EvolvingSword_1
+  - first:
+      213: -779470053899706060
+    second: EvolvingSword_2
+  - first:
+      213: -19652018704902110
+    second: EvolvingSword_3
+  - first:
+      213: -1326352081512830561
+    second: EvolvingSword_4
+  - first:
+      213: -7826700391056460149
+    second: EvolvingSword_5
+  - first:
+      213: 1734432222601480286
+    second: EvolvingSword_6
+  - first:
+      213: -2290291148523262130
+    second: EvolvingSword_7
+  - first:
+      213: 2635107226062990658
+    second: EvolvingSword_8
+  - first:
+      213: -1903325023315064692
+    second: EvolvingSword_9
+  - first:
+      213: -8212994401225669094
+    second: EvolvingSword_10
+  - first:
+      213: 8461971884318256527
+    second: EvolvingSword_11
+  - first:
+      213: 5387864315698485870
+    second: EvolvingSword_12
+  - first:
+      213: -4518607926099165554
+    second: EvolvingSword_13
+  - first:
+      213: -7690661666377580715
+    second: EvolvingSword_14
+  - first:
+      213: -2957664427606697175
+    second: EvolvingSword_15
+  - first:
+      213: 5586886057764245446
+    second: EvolvingSword_16
+  - first:
+      213: -924268050193080693
+    second: EvolvingSword_17
+  - first:
+      213: 1047443114060168403
+    second: EvolvingSword_18
+  - first:
+      213: -3831679912723030364
+    second: EvolvingSword_19
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: EvolvingSword_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 55
+        width: 12
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88f5bb346a51190d0800000000000000
+      internalID: -3417926838352388216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvolvingSword_1
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 54
+        width: 16
+        height: 50
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d9458d9b9450b460800000000000000
+      internalID: 7255392027033291222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvolvingSword_2
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 51
+        width: 16
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 431e044ad14ce25f0800000000000000
+      internalID: -779470053899706060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvolvingSword_3
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 50
+        width: 20
+        height: 68
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22899f5d79e2abff0800000000000000
+      internalID: -19652018704902110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvolvingSword_4
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 48
+        width: 24
+        height: 72
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f99e3562fc9d79de0800000000000000
+      internalID: -1326352081512830561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvolvingSword_5
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 46
+        width: 26
+        height: 76
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b863ba34679f16390800000000000000
+      internalID: -7826700391056460149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvolvingSword_6
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 42
+        width: 26
+        height: 88
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e580723cae0f11810800000000000000
+      internalID: 1734432222601480286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvolvingSword_7
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 39
+        width: 30
+        height: 92
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4fac0cb5504730e0800000000000000
+      internalID: -2290291148523262130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvolvingSword_8
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 38
+        width: 30
+        height: 94
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24dac8a8f08c19420800000000000000
+      internalID: 2635107226062990658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvolvingSword_9
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 38
+        width: 30
+        height: 98
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c88813db9f70695e0800000000000000
+      internalID: -1903325023315064692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvolvingSword_10
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 37
+        width: 34
+        height: 114
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a160cac3b15950e80800000000000000
+      internalID: -8212994401225669094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvolvingSword_11
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 34
+        width: 34
+        height: 124
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8de1286896fe6570800000000000000
+      internalID: 8461971884318256527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvolvingSword_12
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 34
+        width: 34
+        height: 124
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6a163b8c0a85ca40800000000000000
+      internalID: 5387864315698485870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvolvingSword_13
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 34
+        width: 34
+        height: 124
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8e3895280eaa41c0800000000000000
+      internalID: -4518607926099165554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvolvingSword_14
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 33
+        width: 42
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55fb9d716f7454590800000000000000
+      internalID: -7690661666377580715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvolvingSword_15
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 29
+        width: 46
+        height: 140
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92b91bb9fd344f6d0800000000000000
+      internalID: -2957664427606697175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvolvingSword_16
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 26
+        width: 42
+        height: 146
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cfce99d44b988d40800000000000000
+      internalID: 5586886057764245446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvolvingSword_17
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 25
+        width: 34
+        height: 146
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8e9ff6fa175c23f0800000000000000
+      internalID: -924268050193080693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvolvingSword_18
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 25
+        width: 42
+        height: 144
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dc3cff66f3498e00800000000000000
+      internalID: 1047443114060168403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvolvingSword_19
+      rect:
+        serializedVersion: 2
+        x: 642
+        y: 21
+        width: 42
+        height: 148
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4aed425ab6323dac0800000000000000
+      internalID: -3831679912723030364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
