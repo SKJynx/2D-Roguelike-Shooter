@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: event:/Weapons/Jura_K3_SMG_Fire
   guid: e169199297e2434ab99317717bf1e163
   Banks:
-  - {fileID: 4595248063834755065}
+  - {fileID: 793995571035747019}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -56,7 +56,7 @@ MonoBehaviour:
   Path: event:/Weapons/AM80_Reload_Start
   guid: c924b0f5e2d39d499cfe47a5a9c2d12b
   Banks:
-  - {fileID: 4595248063834755065}
+  - {fileID: 793995571035747019}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -97,7 +97,7 @@ MonoBehaviour:
   Path: event:/Weapons/GenericReload
   guid: d19fc9c144d41445bf9e0265d56e0c3b
   Banks:
-  - {fileID: 4595248063834755065}
+  - {fileID: 793995571035747019}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -178,7 +178,7 @@ MonoBehaviour:
   Path: event:/Weapons/D29_Reload_Start
   guid: 3ebd0c5adab304408b439b860414b677
   Banks:
-  - {fileID: 4595248063834755065}
+  - {fileID: 793995571035747019}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -241,7 +241,7 @@ MonoBehaviour:
   Path: event:/Weapons/AM80_Rifle_Fire
   guid: d67a5f5ac04f9a4381b998894900a841
   Banks:
-  - {fileID: 4595248063834755065}
+  - {fileID: 793995571035747019}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -303,11 +303,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: FMOD Roguelike Shooter/Roguelike Shooter FMOD/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637230393996648424
+  lastModified: 637230607644229534
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1250
+    Value: 1428
   Exists: 1
 --- !u!114 &-2120388872072963468
 MonoBehaviour:
@@ -378,7 +378,7 @@ MonoBehaviour:
   Path: event:/Weapons/D29_Magnum_Fire
   guid: b43760f5a3ee064dbf117423e25cc21e
   Banks:
-  - {fileID: 4595248063834755065}
+  - {fileID: 793995571035747019}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -422,6 +422,29 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-708545442881436104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Weapons/Ako_A5_Fire
+  m_EditorClassIdentifier: 
+  Path: event:/Weapons/Ako_A5_Fire
+  guid: 5a2347f102646542a1d2af4ac8c96d75
+  Banks:
+  - {fileID: 793995571035747019}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1242
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -436,7 +459,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: -2362292707110572994}
-  - {fileID: 4595248063834755065}
+  - {fileID: 793995571035747019}
   EditorEvents:
   - {fileID: -6537618672088833684}
   - {fileID: 5068197075852807914}
@@ -449,12 +472,16 @@ MonoBehaviour:
   - {fileID: 3229912781719046185}
   - {fileID: -5225567009480465346}
   - {fileID: -7618418682343696952}
+  - {fileID: 4929508159044315476}
+  - {fileID: 6573593638833768204}
+  - {fileID: -708545442881436104}
+  - {fileID: 1304517574901157009}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 4595248063834755065}
+  - {fileID: 793995571035747019}
   StringsBanks:
   - {fileID: -2362292707110572994}
-  stringsBankWriteTime: 637230393996648424
+  stringsBankWriteTime: 637230607644229534
   cacheVersion: 3
 --- !u!114 &181060280861579891
 MonoBehaviour:
@@ -474,6 +501,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &793995571035747019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD Roguelike Shooter/Roguelike Shooter FMOD/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637230607643759754
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &1096956522782050905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -496,6 +541,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 720
+--- !u!114 &1304517574901157009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Weapons/Ako_A5_Pickup
+  m_EditorClassIdentifier: 
+  Path: event:/Weapons/Ako_A5_Pickup
+  guid: c043621a1560d7429f719ef3efed95fd
+  Banks:
+  - {fileID: 793995571035747019}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 625
 --- !u!114 &1392755438678033498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -511,7 +579,7 @@ MonoBehaviour:
   Path: event:/Weapons/A8_Sidearm
   guid: 7bad693cfb14f94ba58dd124074845fc
   Banks:
-  - {fileID: 4595248063834755065}
+  - {fileID: 793995571035747019}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -570,7 +638,7 @@ MonoBehaviour:
   Path: event:/Weapons/D29_Reload_End
   guid: 3b5e9a695f4ebc4291b09a2560ba8fea
   Banks:
-  - {fileID: 4595248063834755065}
+  - {fileID: 793995571035747019}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -593,7 +661,7 @@ MonoBehaviour:
   Path: event:/Weapons/AM80_Reload_End
   guid: 2b5dfa218f62004ba550fac6ec9811d6
   Banks:
-  - {fileID: 4595248063834755065}
+  - {fileID: 793995571035747019}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -618,7 +686,48 @@ MonoBehaviour:
   lastModified: 637230393996128437
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
+--- !u!114 &4929508159044315476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Weapons/Ako_A5_Reload_Start
+  m_EditorClassIdentifier: 
+  Path: event:/Weapons/Ako_A5_Reload_Start
+  guid: 3f9e2829510cc946a9e4b6d043f572b9
+  Banks:
+  - {fileID: 793995571035747019}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2295
+--- !u!114 &5049517575332088191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD Roguelike Shooter/Roguelike Shooter FMOD/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637230604613130150
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
 --- !u!114 &5068197075852807914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -634,7 +743,7 @@ MonoBehaviour:
   Path: event:/Weapons/PistolReload_Generic
   guid: 7207ac6522816e4d9288c709ae689dbf
   Banks:
-  - {fileID: 4595248063834755065}
+  - {fileID: 793995571035747019}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -657,7 +766,7 @@ MonoBehaviour:
   Path: event:/Weapons/SMGReload_Generic
   guid: e090cb55b4a0dc44a4c682237eaff418
   Banks:
-  - {fileID: 4595248063834755065}
+  - {fileID: 793995571035747019}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -683,6 +792,29 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &6573593638833768204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Weapons/Ako_A5_Reload_End
+  m_EditorClassIdentifier: 
+  Path: event:/Weapons/Ako_A5_Reload_End
+  guid: 4dda9140705c6c409e53026308b5f9c9
+  Banks:
+  - {fileID: 793995571035747019}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1995
 --- !u!114 &7095739990384808859
 MonoBehaviour:
   m_ObjectHideFlags: 0

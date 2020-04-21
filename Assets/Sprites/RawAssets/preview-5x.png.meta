@@ -295,7 +295,7 @@ TextureImporter:
     second: preview-5x_96
   - first:
       213: -186518207175409472
-    second: preview-5x_97
+    second: Ako A5
   - first:
       213: 2388750422015709118
     second: preview-5x_98
@@ -2439,7 +2439,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: preview-5x_97
+      name: Ako A5
       rect:
         serializedVersion: 2
         x: 120

@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d62459c0bb85704fbda5b746b19dbb8, type: 3}
   m_Name: RangedTurretAI
   m_EditorClassIdentifier: 
-  projectile: {fileID: 0}
-  enemyName: TurretAI
-  attackFrequency: 60
-  attackDamage: 23
-  health: 100
-  attackSpeed: 4
+  projectile: {fileID: 2916614864245653124, guid: c39c89d99c2f8f245abda56d25fb64a2,
+    type: 3}
+  enemyName: BurstCannonAI
+  attackFrequency: 10
+  attackDamage: 20
+  health: 400
+  attackSpeed: 15
   enemyType: 1

@@ -50,6 +50,8 @@ public class ItemPickup : MonoBehaviour
         {
             if (itemType == ItemTypes.Weapon)
             {
+                playerWeapon.m_pickupSFX = this.scriptableWeapon.weaponPickupSound;
+
                 FMODUnity.RuntimeManager.PlayOneShot(playerWeapon.m_pickupSFX);
 
                 playerInventory.savedWeapon[playerController.currentWeaponSlot].scriptableWeapon = this.scriptableWeapon;

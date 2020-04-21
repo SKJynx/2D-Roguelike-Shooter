@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c344f31108acdee4ca025b9d70921f51, type: 3}
+  m_Name: Ako A5
+  m_EditorClassIdentifier: 
+  weaponSprite: {fileID: -186518207175409472, guid: c29486488fce4634988257901ab9ec9f,
+    type: 3}
+  bulletType: {fileID: 2916614864245653124, guid: 51055bf5b4b586f46ad3eea3edcb2e27,
+    type: 3}
+  weaponFireSound: event:/Weapons/Ako_A5_Fire
+  reloadSound: event:/Weapons/Ako_A5_Reload_Start
+  endReloadSound: event:/Weapons/Ako_A5_Reload_End
+  weaponPickupSound: event:/Weapons/Ako_A5_Pickup
+  weaponName: Ako A5
+  weaponDamage: 5
+  weaponCost: 400
+  weaponAccuracy: 0
+  critChance: 0.01
+  reloadTime: 240
+  maxAmmo: 1000
+  bulletVelocity: 54
+  fireRate: 1
+  criticalMultiplier: 1.2
+  automatic: 1
+  itemID: 104
+  weaponType: 7
+  ammoType: 7
