@@ -33,3 +33,4 @@ MonoBehaviour:
   automatic: 0
   itemID: 101
   weaponType: 0
+  ammoType: 0

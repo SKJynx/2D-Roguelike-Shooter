@@ -52,7 +52,9 @@ public class ItemPickup : MonoBehaviour
 
                 FMODUnity.RuntimeManager.PlayOneShot(playerWeapon.m_pickupSFX);
 
-                playerInventory.scriptableWeaponSlot[playerController.currentWeaponSlot] = this.scriptableWeapon;
+                playerInventory.savedWeapon[playerController.currentWeaponSlot].scriptableWeapon = this.scriptableWeapon;
+
+                playerWeapon.m_currentAmmo = this.scriptableWeapon.maxAmmo;
 
                 playerWeapon.GetAmmo();
                 playerWeapon.GetScriptableValues();

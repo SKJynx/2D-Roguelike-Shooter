@@ -50,6 +50,7 @@ public class WeaponController : MonoBehaviour
 
     bool willPartialReload;
 
+
     public float m_remainingReloadTime;
 
     float m_fireTimer;
@@ -68,7 +69,6 @@ public class WeaponController : MonoBehaviour
     void Start()
     {
         m_Unarmed = Resources.Load<ScriptableWeapons>("ScriptableObjects/Unarmed");
-
         willPartialReload = false;
         canReload = true;
 
@@ -91,11 +91,12 @@ public class WeaponController : MonoBehaviour
         }
         else if (m_remainingReloadTime < 0 && canReload == false)
         {
-            print("Parformed full reload");
+            print("Performed full reload");
             FinishReload();
         }
     }
 
+    //Gets the values for all the weapons and feeds it from a scriptable object.
     public void GetScriptableValues()
     {
         if (m_scriptableWeapon != null)
@@ -110,7 +111,7 @@ public class WeaponController : MonoBehaviour
             m_critChance = this.m_scriptableWeapon.critChance;
             m_reloadTime = this.m_scriptableWeapon.reloadTime;
             m_maxAmmo = this.m_scriptableWeapon.maxAmmo;
-            m_currentAmmo = this.m_scriptableWeapon.maxAmmo;
+            //m_currentAmmo = this.m_scriptableWeapon.maxAmmo;
             m_fireRate = this.m_scriptableWeapon.fireRate;
             m_bulletSpeed = this.m_scriptableWeapon.bulletVelocity;
             m_autofire = this.m_scriptableWeapon.automatic;
@@ -131,7 +132,7 @@ public class WeaponController : MonoBehaviour
     }
 
 
-    //When called, sets the ammo type for the currently equipped weapon to get and match the player's inventory amount.
+    //When called, sets the ammo type for the currently equipped weapon to get and match the player's inventory reserve amount.
     public void GetAmmo()
     {
         if (m_scriptableWeapon.ammoType == ScriptableWeapons.AmmoType.Light)
@@ -201,58 +202,47 @@ public class WeaponController : MonoBehaviour
             }
         }
 
-        m_scriptableWeapon = playerInventory.scriptableWeaponSlot[playerController.currentWeaponSlot];
+        m_scriptableWeapon = playerInventory.savedWeapon[playerController.currentWeaponSlot].scriptableWeapon;
 
+        //m_scriptableWeapon = playerInventory.scriptableWeaponSlot[playerController.currentWeaponSlot];
     }
 
     void Update()
     {
+
+        //If there is a scriptable weapon assigned, get its ammo type.
         if (m_scriptableWeapon != null)
         {
             GetAmmo();
         }
-
-
+        
         CheckCurrentWeapon();
+
 
         // Autofire
         if (m_fireTimer < 0 && m_currentAmmo > 0 && m_remainingReloadTime < 0 && m_autofire == true && gameObject.GetComponentInParent<PlayerController>().isHolding == 1)
         {
+            playerInventory.UpdateAmmo();
             m_currentAmmo -= 1;
             m_fireTimer = m_fireRate;
             FireBullet();
         }
-
 
     }
 
     public void shootWeapon()
     {
-
-
         // SemiFire
         if (m_fireTimer < 0 && m_currentAmmo > 0 && m_remainingReloadTime < 0 && m_autofire == false && gameObject.GetComponentInParent<PlayerController>().isHolding == 1)
         {
-
+            playerInventory.UpdateAmmo();
             m_currentAmmo -= 1;
             m_fireTimer = m_fireRate;
             FireBullet();
 
         }
 
-        //Reload on empty by firing
 
-        //if (m_currentAmmo == 0 && canReload == true && m_ammoToLoad < m_equippedAmmo)
-        //{
-        //    m_ammoToLoad = m_maxAmmo - m_currentAmmo;
-        //    GetAmmo();
-        //    StartReload();
-        //}
-        //else if (canReload == true && m_currentAmmo < m_maxAmmo && m_ammoToLoad >= m_equippedAmmo)
-        //{
-        //    willPartialReload = true;
-        //    StartReload();
-        //}
     }
 
     void OnReload()
@@ -281,6 +271,7 @@ public class WeaponController : MonoBehaviour
         m_remainingReloadTime = m_reloadTime;
     }
 
+    //Grabs the ammo from the correct ammo pool when doing a partial reload, and checks to make sure you don't go below 0.
     void PartialReload()
     {
 

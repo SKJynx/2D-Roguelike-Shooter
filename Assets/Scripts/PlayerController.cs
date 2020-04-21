@@ -186,30 +186,6 @@ public class PlayerController : MonoBehaviour
         {
             currentWeaponSlot = 0;
         }
-
-
-
-        //if (playerInventory.scriptableWeaponSlot[currentWeaponSlot] == null && weaponController.m_scriptableWeapon != null)
-        //{
-
-        //    playerInventory.scriptableWeaponSlot[currentWeaponSlot] = weaponController.m_scriptableWeapon;
-
-        //    if (currentWeaponSlot < playerInventory.scriptableWeaponSlot.Length - 1)
-        //    {
-        //        if (currentWeaponSlot != maxWeaponSlots)
-        //        {
-        //            currentWeaponSlot++;
-        //        }
-        //        else
-        //        {
-        //            currentWeaponSlot = 0;
-        //        }
-        //    }
-
-        //    weaponController.m_scriptableWeapon = playerInventory.scriptableWeaponSlot[currentWeaponSlot];
-        //    weaponController.GetScriptableValues();
-        //    weaponController.CheckCurrentWeapon();
-        //}
     }
 
     public void OnSwitchWeaponPrevious()
@@ -222,27 +198,6 @@ public class PlayerController : MonoBehaviour
         {
             currentWeaponSlot = maxWeaponSlots - 1;
         }
-
-        //if (playerInventory.scriptableWeaponSlot[currentWeaponSlot] == null && weaponController.m_scriptableWeapon != null)
-        //{
-        //    playerInventory.scriptableWeaponSlot[currentWeaponSlot] = weaponController.m_scriptableWeapon;
-
-        //    if (currentWeaponSlot > 0)
-        //    {
-        //        if (currentWeaponSlot != maxWeaponSlots)
-        //        {
-        //            currentWeaponSlot--;
-        //        }
-        //        else
-        //        {
-        //            currentWeaponSlot = maxWeaponSlots;
-        //        }
-        //    }
-
-        //    weaponController.m_scriptableWeapon = playerInventory.scriptableWeaponSlot[currentWeaponSlot];
-        //    weaponController.GetScriptableValues();
-        //    weaponController.CheckCurrentWeapon();
-        //}
     }
 
 
