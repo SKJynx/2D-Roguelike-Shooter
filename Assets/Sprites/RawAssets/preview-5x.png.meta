@@ -4,13 +4,13 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: 5014453275893686757
-    second: AssaultRifle
+    second: AM80 Rifle
   - first:
       213: -4593375572508284777
-    second: SMG
+    second: Jura K3 SMG
   - first:
       213: 1886367577830374835
-    second: SMG2
+    second: Moruna APS-50
   - first:
       213: -8972307415754388123
     second: preview-5x_3
@@ -43,7 +43,7 @@ TextureImporter:
     second: preview-5x_12
   - first:
       213: 2736848717898693165
-    second: Sidearm
+    second: A8 Sidearm
   - first:
       213: -4375969730507739929
     second: preview-5x_14
@@ -58,7 +58,7 @@ TextureImporter:
     second: preview-5x_17
   - first:
       213: -8381413446973103907
-    second: Magnum
+    second: D29 Magnum
   - first:
       213: -5336247102497948445
     second: preview-5x_19
@@ -121,7 +121,7 @@ TextureImporter:
     second: preview-5x_38
   - first:
       213: -6947532861148852748
-    second: Rifle_Large
+    second: AMR98 Rifle
   - first:
       213: 1510923081585879461
     second: preview-5x_40
@@ -402,7 +402,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: AssaultRifle
+      name: AM80 Rifle
       rect:
         serializedVersion: 2
         x: 15
@@ -423,7 +423,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SMG
+      name: Jura K3 SMG
       rect:
         serializedVersion: 2
         x: 120
@@ -444,7 +444,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SMG2
+      name: Moruna APS-50
       rect:
         serializedVersion: 2
         x: 220
@@ -675,7 +675,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sidearm
+      name: A8 Sidearm
       rect:
         serializedVersion: 2
         x: 120
@@ -780,7 +780,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Magnum
+      name: D29 Magnum
       rect:
         serializedVersion: 2
         x: 220
@@ -1221,7 +1221,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rifle_Large
+      name: AMR98 Rifle
       rect:
         serializedVersion: 2
         x: 315

@@ -16,7 +16,7 @@ MonoBehaviour:
     type: 3}
   bulletType: {fileID: 2916614864245653124, guid: e7ee88d7e9c0a184a979131fe9ad50ab,
     type: 3}
-  weaponFireSound: event:/Weapons/A8 Sidearm
+  weaponFireSound: event:/Weapons/A8_Sidearm
   reloadSound: event:/Weapons/PistolReload_Generic
   endReloadSound: event:/Weapons/GenericReload
   weaponPickupSound: event:/Weapons/PistolReload_Generic

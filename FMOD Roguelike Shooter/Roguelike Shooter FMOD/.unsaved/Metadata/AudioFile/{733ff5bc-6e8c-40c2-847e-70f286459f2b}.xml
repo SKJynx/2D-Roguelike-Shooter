@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{733ff5bc-6e8c-40c2-847e-70f286459f2b}">
+		<property name="assetPath">
+			<value>M50ReStr.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>22.0499992</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.36571428571428571</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{3c740bac-1932-4ba0-a337-062aa52afc15}</destination>
+		</relationship>
+	</object>
+</objects>

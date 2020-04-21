@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{58445681-0b01-467a-944b-af0030368896}">
+		<property name="assetPath">
+			<value>DMReStr.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>22.0499992</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>1.9081632653061225</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{3c740bac-1932-4ba0-a337-062aa52afc15}</destination>
+		</relationship>
+	</object>
+</objects>

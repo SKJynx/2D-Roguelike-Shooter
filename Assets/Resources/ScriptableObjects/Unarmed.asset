@@ -17,7 +17,7 @@ MonoBehaviour:
   weaponFireSound: 
   reloadSound: 
   endReloadSound: 
-  weaponPickupSound: 
+  weaponPickupSound: event:/Weapons/PistolReload_Generic
   weaponName: 
   weaponDamage: 0
   weaponCost: 0

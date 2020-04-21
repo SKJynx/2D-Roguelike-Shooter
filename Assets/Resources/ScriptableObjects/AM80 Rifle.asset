@@ -16,9 +16,9 @@ MonoBehaviour:
     type: 3}
   bulletType: {fileID: 2916614864245653124, guid: d1d07020bcff0eb438d1be79d74d935c,
     type: 3}
-  weaponFireSound: event:/Weapons/AM80 Rifle
-  reloadSound: event:/Weapons/GenericReload
-  endReloadSound: event:/Weapons/GenericReload
+  weaponFireSound: event:/Weapons/AM80_Rifle_Fire
+  reloadSound: event:/Weapons/AM80_Reload_Start
+  endReloadSound: event:/Weapons/AM80_Reload_End
   weaponPickupSound: event:/Weapons/PistolReload_Generic
   weaponName: AM80 Rifle
   weaponDamage: 14

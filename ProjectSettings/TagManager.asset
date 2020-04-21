@@ -7,6 +7,7 @@ TagManager:
   - ItemWeapon
   - Item
   - PlayerCamera
+  - Bullet
   layers:
   - Default
   - TransparentFX

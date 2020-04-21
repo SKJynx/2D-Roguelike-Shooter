@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{c85a073e-81e2-4389-aa8c-acc026e5f1d7}">
+		<property name="assetPath">
+			<value>SARReStr.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>22.0499992</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.44934240362811789</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{3c740bac-1932-4ba0-a337-062aa52afc15}</destination>
+		</relationship>
+	</object>
+</objects>
