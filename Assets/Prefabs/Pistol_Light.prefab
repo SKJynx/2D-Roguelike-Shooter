@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -8163686338346436771}
   m_Layer: 0
   m_Name: Pistol_Light
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -144,8 +144,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b9b5955a6b81ce4abaec98bd13e89a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  floatingDamageText: {fileID: 4668877497470204445, guid: 2863ae15d1a839847bafcb10f2d5ef93,
-    type: 3}
   m_bulletDamage: 0
   bulletLifetime: 3
 --- !u!96 &-8163686338346436771

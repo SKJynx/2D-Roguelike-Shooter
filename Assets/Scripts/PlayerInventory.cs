@@ -35,6 +35,7 @@ public class PlayerInventory : MonoBehaviour
 
     public void GetCurrentWeaponInfo()
     {
+
         savedWeapon[playerController.currentWeaponSlot].ammoCount = weaponController.m_currentAmmo;
         savedWeapon[playerController.currentWeaponSlot].scriptableWeapon = weaponController.m_scriptableWeapon;
         savedWeapon[playerController.currentWeaponSlot].weaponName = weaponController.m_weaponName;

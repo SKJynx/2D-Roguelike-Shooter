@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     // to access throughout your scene
     public WeaponController weaponController;
     public PlayerInventory playerInventory;
+    public PlayerController playerController;
 
     public static GameManager Instance { get; private set; } // static singleton
     void Awake()
@@ -25,6 +26,11 @@ public class GameManager : MonoBehaviour
         else { Destroy(gameObject); }
         // Cache references to all desired variables
         playerInventory = FindObjectOfType<PlayerInventory>();
+
+        if (Instance == null) { Instance = this; }
+        else { Destroy(gameObject); }
+        // Cache references to all desired variables
+        playerController = FindObjectOfType<PlayerController>();
     }
 
 

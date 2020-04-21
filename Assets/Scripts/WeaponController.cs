@@ -48,7 +48,10 @@ public class WeaponController : MonoBehaviour
     public float m_critMultiplier;
     public bool m_autofire;
 
+    [SerializeField]
     bool willPartialReload;
+
+    public bool canSwapWeapon;
 
 
     public float m_remainingReloadTime;
@@ -209,23 +212,31 @@ public class WeaponController : MonoBehaviour
 
     void Update()
     {
-
+        if (m_remainingReloadTime > 0)
+        {
+            canSwapWeapon = false;
+        }
+        else
+        {
+            canSwapWeapon = true;
+        }
         //If there is a scriptable weapon assigned, get its ammo type.
         if (m_scriptableWeapon != null)
         {
             GetAmmo();
         }
-        
+
         CheckCurrentWeapon();
 
 
         // Autofire
         if (m_fireTimer < 0 && m_currentAmmo > 0 && m_remainingReloadTime < 0 && m_autofire == true && gameObject.GetComponentInParent<PlayerController>().isHolding == 1)
         {
-            playerInventory.UpdateAmmo();
+
             m_currentAmmo -= 1;
             m_fireTimer = m_fireRate;
             FireBullet();
+            playerInventory.UpdateAmmo();
         }
 
     }
@@ -235,10 +246,11 @@ public class WeaponController : MonoBehaviour
         // SemiFire
         if (m_fireTimer < 0 && m_currentAmmo > 0 && m_remainingReloadTime < 0 && m_autofire == false && gameObject.GetComponentInParent<PlayerController>().isHolding == 1)
         {
-            playerInventory.UpdateAmmo();
+            
             m_currentAmmo -= 1;
             m_fireTimer = m_fireRate;
             FireBullet();
+            playerInventory.UpdateAmmo();
 
         }
 
@@ -327,7 +339,7 @@ public class WeaponController : MonoBehaviour
         }
 
         canReload = true;
-
+        willPartialReload = false;
         GetAmmo();
     }
 

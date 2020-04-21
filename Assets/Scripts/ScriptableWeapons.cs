@@ -25,20 +25,21 @@ public class ScriptableWeapons : ScriptableObject
     public float weaponCost;
     public float weaponAccuracy;
 
-    // 100 = 100% crit chance
+    //100 = 100% crit chance
     public float critChance;
 
-    // In ticks
+    //In ticks
     public float reloadTime;
     public int maxAmmo;
 
-    // 50 is *really* high
+    //50 is *really* high
     public float bulletVelocity;
 
-    // In ticks 60 ticks = 1 sec
+    //In ticks 60 ticks = 1 sec
     public float fireRate;
     public float criticalMultiplier;
 
+    //Can the weapon fire full auto?
     public bool automatic;
 
     public int itemID;

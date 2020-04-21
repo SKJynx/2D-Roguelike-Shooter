@@ -381,6 +381,7 @@ MonoBehaviour:
   m_bulletSpeed: 0
   m_critMultiplier: 0
   m_autofire: 0
+  willPartialReload: 0
   m_remainingReloadTime: 0
   m_equippedAmmo: 0
   itemID: 0
@@ -1811,11 +1812,11 @@ GameObject:
   - component: {fileID: 1106085949}
   - component: {fileID: 1106085951}
   - component: {fileID: 1106085950}
+  - component: {fileID: 1106085955}
   - component: {fileID: 1106085953}
   - component: {fileID: 1106085952}
   - component: {fileID: 1106085954}
   - component: {fileID: 1106085956}
-  - component: {fileID: 1106085955}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1982,12 +1983,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ee8dbefb88777b428b3c82a5f93bcec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scriptableWeaponSlot:
-  - {fileID: 11400000, guid: 7ff43a8e5bb415d459607da324598dea, type: 2}
-  - {fileID: 11400000, guid: 6ef95178d98547e4fade720a79d23345, type: 2}
-  - {fileID: 11400000, guid: 2ad34e3f5cd48d947a29b12c7ae3f3a2, type: 2}
-  - {fileID: 11400000, guid: 30ad360cc4019ad40aef106d70ab3732, type: 2}
-  savedAmmoCount: 
+  savedWeapon:
+  - scriptableWeapon: {fileID: 0}
+    weaponName: 
+    ammoCount: 0
+  - scriptableWeapon: {fileID: 0}
+    weaponName: 
+    ammoCount: 0
+  - scriptableWeapon: {fileID: 0}
+    weaponName: 
+    ammoCount: 0
+  - scriptableWeapon: {fileID: 0}
+    weaponName: 
+    ammoCount: 0
   ammoLightCount: 0
   ammoMagnumCount: 0
   ammoAssaultCount: 0

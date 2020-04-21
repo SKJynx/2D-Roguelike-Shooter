@@ -177,27 +177,39 @@ public class PlayerController : MonoBehaviour
 
     public void OnSwitchWeaponNext()
     {
+        if (weaponController.canSwapWeapon == true)
+        {
+            if (currentWeaponSlot < maxWeaponSlots - 1)
+            {
+                currentWeaponSlot++;
 
-        if (currentWeaponSlot < maxWeaponSlots - 1)
-        {
-            currentWeaponSlot++;
+            }
+            else
+            {
+                currentWeaponSlot = 0;
+            }
+            weaponController.m_currentAmmo = playerInventory.savedWeapon[currentWeaponSlot].ammoCount;
         }
-        else
-        {
-            currentWeaponSlot = 0;
-        }
+
     }
 
     public void OnSwitchWeaponPrevious()
     {
-        if (currentWeaponSlot > 0)
+        if (weaponController.canSwapWeapon == true)
         {
-            currentWeaponSlot--;
+            if (currentWeaponSlot > 0)
+            {
+                currentWeaponSlot--;
+
+            }
+
+            else
+            {
+                currentWeaponSlot = maxWeaponSlots - 1;
+            }
+            weaponController.m_currentAmmo = playerInventory.savedWeapon[currentWeaponSlot].ammoCount;
         }
-        else
-        {
-            currentWeaponSlot = maxWeaponSlots - 1;
-        }
+
     }
 
 
