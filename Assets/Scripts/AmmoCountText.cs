@@ -31,7 +31,7 @@ public class AmmoCountText : MonoBehaviour
 
         if (weaponController.isEquipped != false)
         {
-            m_ammoCount.text = $"{m_currentAmmo} | {weaponController.m_maxAmmo}\n{weaponController.m_equippedAmmo}";
+            m_ammoCount.text = $"{m_currentAmmo} | {weaponController.m_maxAmmo}\n{weaponController.m_equippedAmmo}\nHP: {PlayerStatsManager.playerHealth}";
         }
         else
         {

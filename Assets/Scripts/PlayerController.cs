@@ -60,6 +60,8 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        PlayerStatsManager.playerHealth = 100;
+
         canBeHurt = true;
         currentWeaponSlot = 0;
         maxWeaponSlots = 4;
@@ -94,8 +96,15 @@ public class PlayerController : MonoBehaviour
         LookAtReticle();
 
         anim.SetFloat("horizontalSpeed", Mathf.Abs(rb2d.velocity.x));
-        anim.SetFloat("verticalSpeed", Mathf.Abs(rb2d.velocity.y));
+        anim.SetFloat("verticalSpeed", Mathf.Abs(rb2d.velocity.y));   
+    }
 
+    public void CheckHealth()
+    {
+        if(PlayerStatsManager.playerHealth <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     void OnMove(InputValue value)

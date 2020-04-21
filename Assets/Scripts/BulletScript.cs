@@ -26,11 +26,23 @@ public class BulletScript : MonoBehaviour
     {
         if (collision != null)
         {
-            if (collision.CompareTag("Enemy"))
+            if (collision.CompareTag("Enemy") && gameObject.CompareTag("Bullet"))
             {
                 collision.gameObject.GetComponent<HealthManager>().TakeDamage((int)m_bulletDamage);
                 PlayerStatsManager.playerDamageDealt += (int)m_bulletDamage;
                 PlayerStatsManager.playerComboDamage += (int)m_bulletDamage;
+                DestroySelf();
+            }
+        }
+
+        if (collision != null)
+        {
+            if (collision.CompareTag("Player") && gameObject.CompareTag("EnemyBullet"))
+            {
+                PlayerStatsManager.playerHealth -= (int)m_bulletDamage;
+
+                collision.GetComponent<PlayerController>().CheckHealth();
+
                 DestroySelf();
             }
         }

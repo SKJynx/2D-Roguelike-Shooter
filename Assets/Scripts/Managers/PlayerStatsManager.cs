@@ -7,4 +7,5 @@ public static class PlayerStatsManager
     public static int playerDamageDealt;
     public static int playerComboDamage;
 
+    public static int playerHealth;
 }
