@@ -51,7 +51,6 @@ public class ItemPickup : MonoBehaviour
 
                 FMODUnity.RuntimeManager.PlayOneShot(playerWeapon.m_pickupSFX);
 
-                other.GetComponentInChildren<SpriteRenderer>().sprite = this.scriptableWeapon.weaponSprite;
                 playerWeapon.m_scriptableWeapon = this.scriptableWeapon;
 
                 playerWeapon.GetAmmo();

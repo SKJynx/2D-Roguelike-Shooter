@@ -308,7 +308,9 @@ MonoBehaviour:
   m_critMultiplier: 0
   m_autofire: 0
   m_remainingReloadTime: 0
+  m_equippedAmmo: 0
   itemID: 0
+  m_currentAmmoPool: 0
 --- !u!114 &134421296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1052,6 +1054,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponController: {fileID: 0}
+  playerInventory: {fileID: 0}
 --- !u!4 &868663946
 Transform:
   m_ObjectHideFlags: 0
@@ -1558,11 +1561,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scriptabeWeaponSlot:
-  - {fileID: 11400000, guid: 7ff43a8e5bb415d459607da324598dea, type: 2}
-  - {fileID: 11400000, guid: 6ef95178d98547e4fade720a79d23345, type: 2}
-  - {fileID: 11400000, guid: 2ad34e3f5cd48d947a29b12c7ae3f3a2, type: 2}
-  - {fileID: 11400000, guid: 30ad360cc4019ad40aef106d70ab3732, type: 2}
-  - {fileID: 11400000, guid: 25d56c958d18d194ba9d85eb061b4098, type: 2}
+  - {fileID: 0}
+  ammoLightCount: 0
+  ammoMagnumCount: 0
+  ammoAssaultCount: 0
+  ammoHeavyCount: 0
+  ammoSniperCount: 0
+  ammoExplosiveCount: 0
+  ammoShellCount: 0
+  ammoEnergyCount: 0
+  grenadeCount: 0
 --- !u!95 &1106085956
 Animator:
   serializedVersion: 3

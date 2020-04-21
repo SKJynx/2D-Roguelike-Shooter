@@ -6,7 +6,9 @@ using UnityEngine;
 public class PlayerInventory : MonoBehaviour
 {
 
-    public List<ScriptableWeapons> scriptabeWeaponSlot;
+    //public List<ScriptableWeapons> scriptableWeaponSlot;
+
+    public ScriptableWeapons[] scriptableWeaponSlot;
 
     public int ammoLightCount;
     public int ammoMagnumCount;

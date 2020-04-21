@@ -30,4 +30,5 @@ MonoBehaviour:
   criticalMultiplier: 0
   automatic: 0
   itemID: 99
-  weaponType: 9
+  weaponType: 10
+  ammoType: 9

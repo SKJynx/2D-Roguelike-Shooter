@@ -10,26 +10,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c344f31108acdee4ca025b9d70921f51, type: 3}
-  m_Name: AM80 Rifle
+  m_Name: Jura K3 SMG
   m_EditorClassIdentifier: 
-  weaponSprite: {fileID: 5014453275893686757, guid: c29486488fce4634988257901ab9ec9f,
+  weaponSprite: {fileID: -4593375572508284777, guid: c29486488fce4634988257901ab9ec9f,
     type: 3}
-  bulletType: {fileID: 2916614864245653124, guid: d1d07020bcff0eb438d1be79d74d935c,
+  bulletType: {fileID: 2916614864245653124, guid: e7ee88d7e9c0a184a979131fe9ad50ab,
     type: 3}
-  weaponFireSound: event:/Weapons/AM80 Rifle
-  reloadSound: event:/Weapons/GenericReload
+  weaponFireSound: event:/Weapons/Jura K3 SMG
+  reloadSound: event:/Weapons/SMGReload_Generic
   endReloadSound: event:/Weapons/GenericReload
   weaponPickupSound: event:/Weapons/PistolReload_Generic
-  weaponName: AM80 Rifle
-  weaponDamage: 14
-  weaponCost: 280
+  weaponName: Jura K3 SMG
+  weaponDamage: 7
+  weaponCost: 340
   weaponAccuracy: 0
-  critChance: 11
-  reloadTime: 130
-  maxAmmo: 30
-  bulletVelocity: 24
-  fireRate: 7
-  criticalMultiplier: 1.8
+  critChance: 2
+  reloadTime: 105
+  maxAmmo: 40
+  bulletVelocity: 21
+  fireRate: 2.65
+  criticalMultiplier: 1.3
   automatic: 1
-  itemID: 102
-  weaponType: 3
+  itemID: 103
+  weaponType: 2
+  ammoType: 0

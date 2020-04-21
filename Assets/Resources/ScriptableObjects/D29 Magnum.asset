@@ -32,4 +32,5 @@ MonoBehaviour:
   criticalMultiplier: 2.5
   automatic: 0
   itemID: 100
-  weaponType: 0
+  weaponType: 1
+  ammoType: 1

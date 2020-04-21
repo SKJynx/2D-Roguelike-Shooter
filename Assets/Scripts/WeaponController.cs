@@ -7,6 +7,8 @@ public class WeaponController : MonoBehaviour
 {
     public ScriptableWeapons m_scriptableWeapon;
 
+    public ScriptableWeapons m_Unarmed;
+
     [FMODUnity.EventRef]
     public string m_fireSFX;
 
@@ -30,6 +32,7 @@ public class WeaponController : MonoBehaviour
     GameObject firingAnimation;
 
     PlayerInventory playerInventory;
+    PlayerController playerController;
 
     public string m_weaponName;
 
@@ -44,6 +47,8 @@ public class WeaponController : MonoBehaviour
     public float m_bulletSpeed;
     public float m_critMultiplier;
     public bool m_autofire;
+
+    bool willPartialReload;
 
     public float m_remainingReloadTime;
 
@@ -62,9 +67,12 @@ public class WeaponController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        m_Unarmed = Resources.Load<ScriptableWeapons>("ScriptableObjects/Unarmed");
 
+        willPartialReload = false;
         canReload = true;
 
+        playerController = GetComponentInParent<PlayerController>();
         playerInventory = GetComponentInParent<PlayerInventory>();
         sr = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
@@ -76,41 +84,50 @@ public class WeaponController : MonoBehaviour
         m_fireTimer -= 1;
         m_remainingReloadTime -= 1;
 
-        if (m_remainingReloadTime < 0 && canReload == false)
+        if (m_remainingReloadTime < 0 && canReload == false && willPartialReload == true)
         {
+            print("Performed partial reload");
+            PartialReload();
+        }
+        else if (m_remainingReloadTime < 0 && canReload == false)
+        {
+            print("Parformed full reload");
             FinishReload();
         }
     }
 
     public void GetScriptableValues()
     {
-        sr.sprite = this.m_scriptableWeapon.weaponSprite;
+        if (m_scriptableWeapon != null)
+        {
+            sr.sprite = this.m_scriptableWeapon.weaponSprite;
 
-        m_weaponName = this.m_scriptableWeapon.weaponName;
+            m_weaponName = this.m_scriptableWeapon.weaponName;
 
-        m_weaponDamage = this.m_scriptableWeapon.weaponDamage;
-        m_weaponCost = this.m_scriptableWeapon.weaponCost;
-        m_weaponAccuracy = this.m_scriptableWeapon.weaponAccuracy;
-        m_critChance = this.m_scriptableWeapon.critChance;
-        m_reloadTime = this.m_scriptableWeapon.reloadTime;
-        m_maxAmmo = this.m_scriptableWeapon.maxAmmo;
-        m_currentAmmo = this.m_scriptableWeapon.maxAmmo;
-        m_fireRate = this.m_scriptableWeapon.fireRate;
-        m_bulletSpeed = this.m_scriptableWeapon.bulletVelocity;
-        m_autofire = this.m_scriptableWeapon.automatic;
-        m_critMultiplier = this.m_scriptableWeapon.criticalMultiplier;
-        m_remainingReloadTime = 0;
+            m_weaponDamage = this.m_scriptableWeapon.weaponDamage;
+            m_weaponCost = this.m_scriptableWeapon.weaponCost;
+            m_weaponAccuracy = this.m_scriptableWeapon.weaponAccuracy;
+            m_critChance = this.m_scriptableWeapon.critChance;
+            m_reloadTime = this.m_scriptableWeapon.reloadTime;
+            m_maxAmmo = this.m_scriptableWeapon.maxAmmo;
+            m_currentAmmo = this.m_scriptableWeapon.maxAmmo;
+            m_fireRate = this.m_scriptableWeapon.fireRate;
+            m_bulletSpeed = this.m_scriptableWeapon.bulletVelocity;
+            m_autofire = this.m_scriptableWeapon.automatic;
+            m_critMultiplier = this.m_scriptableWeapon.criticalMultiplier;
+            m_remainingReloadTime = 0;
 
-        // Sound effects get passed through [FMODUnity.EventRef]
-        m_fireSFX = this.m_scriptableWeapon.weaponFireSound;
-        m_reloadSFX = this.m_scriptableWeapon.reloadSound;
-        m_endReloadSFX = this.m_scriptableWeapon.endReloadSound;
-        m_pickupSFX = this.m_scriptableWeapon.weaponPickupSound;
+            // Sound effects get passed through [FMODUnity.EventRef]
+            m_fireSFX = this.m_scriptableWeapon.weaponFireSound;
+            m_reloadSFX = this.m_scriptableWeapon.reloadSound;
+            m_endReloadSFX = this.m_scriptableWeapon.endReloadSound;
+            m_pickupSFX = this.m_scriptableWeapon.weaponPickupSound;
 
-        // Type of bullet the weapon shoots
-        bulletPrefab = this.m_scriptableWeapon.bulletType;
+            // Type of bullet the weapon shoots
+            bulletPrefab = this.m_scriptableWeapon.bulletType;
 
-        itemID = this.m_scriptableWeapon.itemID;
+            itemID = this.m_scriptableWeapon.itemID;
+        }
     }
 
 
@@ -162,7 +179,7 @@ public class WeaponController : MonoBehaviour
     //When called, if the current assigned weapon name is not the name of the scriptable weapon's name, refresh the values to match.
     public void CheckCurrentWeapon()
     {
-        if (m_scriptableWeapon != null)
+        if (m_scriptableWeapon != null && m_scriptableWeapon != m_Unarmed)
         {
             isEquipped = true;
         }
@@ -171,15 +188,20 @@ public class WeaponController : MonoBehaviour
             isEquipped = false;
         }
 
+        if (isEquipped == false)
+        {
+            m_scriptableWeapon = m_Unarmed;
+        }
+
         if (m_scriptableWeapon != null)
         {
             if (m_weaponName != this.m_scriptableWeapon.name)
             {
-                print("Changed weapon");
                 GetScriptableValues();
             }
-
         }
+
+        m_scriptableWeapon = playerInventory.scriptableWeaponSlot[playerController.currentWeaponSlot];
 
     }
 
@@ -218,11 +240,19 @@ public class WeaponController : MonoBehaviour
 
         }
 
-        if (m_currentAmmo == 0 && canReload == true && m_ammoToLoad < m_equippedAmmo)
-        {
-            StartReload();
-        }
+        //Reload on empty by firing
 
+        //if (m_currentAmmo == 0 && canReload == true && m_ammoToLoad < m_equippedAmmo)
+        //{
+        //    m_ammoToLoad = m_maxAmmo - m_currentAmmo;
+        //    GetAmmo();
+        //    StartReload();
+        //}
+        //else if (canReload == true && m_currentAmmo < m_maxAmmo && m_ammoToLoad >= m_equippedAmmo)
+        //{
+        //    willPartialReload = true;
+        //    StartReload();
+        //}
     }
 
     void OnReload()
@@ -231,8 +261,13 @@ public class WeaponController : MonoBehaviour
         m_ammoToLoad = m_maxAmmo - m_currentAmmo;
 
 
-        if (canReload == true && m_currentAmmo < m_maxAmmo && m_ammoToLoad < m_equippedAmmo)
+        if (canReload == true && m_currentAmmo < m_maxAmmo && m_ammoToLoad < m_equippedAmmo && m_equippedAmmo != 0)
         {
+            StartReload();
+        }
+        else if (canReload == true && m_currentAmmo < m_maxAmmo && m_ammoToLoad >= m_equippedAmmo && m_equippedAmmo != 0)
+        {
+            willPartialReload = true;
             StartReload();
         }
 
@@ -245,6 +280,66 @@ public class WeaponController : MonoBehaviour
         canReload = false;
         m_remainingReloadTime = m_reloadTime;
     }
+
+    void PartialReload()
+    {
+
+        FMODUnity.RuntimeManager.PlayOneShot(m_endReloadSFX);
+
+        if (m_scriptableWeapon.ammoType == ScriptableWeapons.AmmoType.Light)
+        {
+            m_currentAmmo += playerInventory.ammoLightCount;
+
+            playerInventory.ammoLightCount -= playerInventory.ammoLightCount;
+        }
+
+        if (m_scriptableWeapon.ammoType == ScriptableWeapons.AmmoType.Magnum)
+        {
+            m_currentAmmo += playerInventory.ammoMagnumCount;
+
+            playerInventory.ammoMagnumCount -= playerInventory.ammoMagnumCount;
+        }
+
+        if (m_scriptableWeapon.ammoType == ScriptableWeapons.AmmoType.Assault)
+        {
+            m_currentAmmo += playerInventory.ammoAssaultCount;
+
+            playerInventory.ammoAssaultCount -= playerInventory.ammoAssaultCount;
+        }
+
+        if (m_scriptableWeapon.ammoType == ScriptableWeapons.AmmoType.Heavy)
+        {
+            m_currentAmmo += playerInventory.ammoHeavyCount;
+
+            playerInventory.ammoHeavyCount -= playerInventory.ammoHeavyCount;
+        }
+
+        if (m_scriptableWeapon.ammoType == ScriptableWeapons.AmmoType.Shell)
+        {
+            m_currentAmmo += playerInventory.ammoShellCount;
+
+            playerInventory.ammoShellCount -= playerInventory.ammoShellCount;
+        }
+
+        if (m_scriptableWeapon.ammoType == ScriptableWeapons.AmmoType.Explosive)
+        {
+            m_currentAmmo += playerInventory.ammoExplosiveCount;
+
+            playerInventory.ammoExplosiveCount -= playerInventory.ammoExplosiveCount;
+        }
+
+        if (m_scriptableWeapon.ammoType == ScriptableWeapons.AmmoType.Energy)
+        {
+            m_currentAmmo += playerInventory.ammoEnergyCount;
+
+            playerInventory.ammoEnergyCount -= playerInventory.ammoEnergyCount;
+        }
+
+        canReload = true;
+
+        GetAmmo();
+    }
+
 
     void FinishReload()
     {
