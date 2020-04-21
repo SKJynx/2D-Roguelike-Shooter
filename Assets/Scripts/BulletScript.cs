@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BulletScript : MonoBehaviour
 {
+    Rigidbody2D rb2d;
+
     public float m_bulletDamage;
 
     TextMesh textMesh;
@@ -14,6 +16,7 @@ public class BulletScript : MonoBehaviour
 
     void Start()
     {
+        rb2d = GetComponent<Rigidbody2D>();
         Invoke("DestroySelf", bulletLifetime);
     }
 

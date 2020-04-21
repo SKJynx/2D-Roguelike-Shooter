@@ -52,8 +52,13 @@ public class RangedAIMotor : MonoBehaviour
 
     void FixedUpdate()
     {
-        m_attackTimer -= 1;
-        m_timeToReload -= 1;
+
+    }
+
+    void Update()
+    {
+        m_attackTimer -= (1 * 60) * Time.deltaTime;
+        m_timeToReload -= (1 * 60) * Time.deltaTime;
 
         if (m_target != null && m_attackTimer < 0 && shotsToFire > 0)
         {
@@ -63,11 +68,6 @@ public class RangedAIMotor : MonoBehaviour
         {
             StartReload();
         }
-    }
-
-    void Update()
-    {
-
         LookAtTarget();
     }
 

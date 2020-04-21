@@ -16,11 +16,6 @@ public class HealthManager : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
     }
 
-    void Update()
-    {
-
-    }
-
 
     //TODO - Implement knockback system
     //void OnTriggerEnter2D(Collider2D otherCollider)

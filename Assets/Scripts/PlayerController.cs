@@ -24,8 +24,7 @@ public class PlayerController : MonoBehaviour
     public float pickupIsActive;
     [SerializeField]
     float ability1IsActive;
-    [SerializeField]
-    float slowMotionAmount;
+
 
     [SerializeField]
     GameObject reticle;
@@ -52,6 +51,12 @@ public class PlayerController : MonoBehaviour
     public int currentWeaponSlot;
 
     public int maxWeaponSlots;
+    //EXPERIMENTAL CODE------------------
+    [SerializeField]
+    float slowMotionAmount;
+
+
+    //-----------------------------------
 
     private void Awake()
     {
@@ -70,26 +75,28 @@ public class PlayerController : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         anim = playerSprite.GetComponentInChildren<Animator>();
         playerAnimator = this.gameObject.GetComponent<Animator>();
+
     }
 
-    void FixedUpdate()
+
+    void Update()
     {
-        dodgeTimer -= 1;
+;
+        dodgeTimer -= (1 * 60) * Time.deltaTime;
 
         if (canInput == true)
         {
             rb2d.velocity = movement * maxSpeed;
         }
-    }
 
-    void Update()
-    {
         AddAmmoCheat();
 
         // EXPERIMENTAL CODE  ------------
         Time.fixedDeltaTime = this.fixedDeltaTime * Time.timeScale;
 
+
         SlowMotionAbility();
+        print(Time.timeScale);
         // -------------------------------
 
         FixWeaponOrientation();
@@ -97,6 +104,29 @@ public class PlayerController : MonoBehaviour
 
         anim.SetFloat("horizontalSpeed", Mathf.Abs(rb2d.velocity.x));
         anim.SetFloat("verticalSpeed", Mathf.Abs(rb2d.velocity.y));   
+    }
+
+    //Experimental
+    void SlowMotionAbility()
+    {
+
+
+        if (ability1IsActive == 1)
+        {
+            if (Time.timeScale > 0.3f)
+            {
+                Time.timeScale -= 1.0f * Time.deltaTime;
+            }      
+            else
+            {
+                Time.timeScale = 0.3f;
+            }
+
+        }
+        else
+        {
+            Time.timeScale = 1.0f;
+        }
     }
 
     public void CheckHealth()
@@ -174,19 +204,7 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    //Experimental
-    void SlowMotionAbility()
-    {
 
-        if (ability1IsActive == 1)
-        {
-            Time.timeScale = slowMotionAmount;
-        }
-        else
-        {
-            Time.timeScale = 1.0f;
-        }
-    }
 
     public void OnSwitchWeaponNext()
     {
@@ -240,11 +258,11 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
-            playerInventory.ammoLightCount += 20;
+            playerInventory.ammoLightCount += 200;
             playerInventory.ammoMagnumCount += 30;
             playerInventory.ammoHeavyCount += 200;
             playerInventory.ammoAssaultCount += 150;
-            playerInventory.ammoSniperCount += 10;
+            playerInventory.ammoSniperCount += 20;
             playerInventory.ammoShellCount += 30;
             playerInventory.ammoExplosiveCount += 5;
             playerInventory.ammoEnergyCount += 1000;

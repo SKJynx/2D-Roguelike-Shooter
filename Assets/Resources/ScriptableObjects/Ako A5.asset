@@ -21,15 +21,15 @@ MonoBehaviour:
   endReloadSound: event:/Weapons/Ako_A5_Reload_End
   weaponPickupSound: event:/Weapons/Ako_A5_Pickup
   weaponName: Ako A5
-  weaponDamage: 5
-  weaponCost: 400
+  weaponDamage: 13
+  weaponCost: 480
   weaponAccuracy: 0
-  critChance: 0.01
+  critChance: 0.11
   reloadTime: 240
-  maxAmmo: 1000
-  bulletVelocity: 54
-  fireRate: 1
-  criticalMultiplier: 1.2
+  maxAmmo: 50
+  bulletVelocity: 75
+  fireRate: 7.5
+  criticalMultiplier: 1.6
   automatic: 1
   itemID: 104
   weaponType: 7

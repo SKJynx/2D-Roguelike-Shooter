@@ -82,23 +82,6 @@ public class WeaponController : MonoBehaviour
         firingAnimator = firingAnimation.GetComponentInChildren<Animator>();
     }
 
-    void FixedUpdate()
-    {
-        m_fireTimer -= 1;
-        m_remainingReloadTime -= 1;
-
-        if (m_remainingReloadTime < 0 && canReload == false && willPartialReload == true)
-        {
-            print("Performed partial reload");
-            PartialReload();
-        }
-        else if (m_remainingReloadTime < 0 && canReload == false)
-        {
-            print("Performed full reload");
-            FinishReload();
-        }
-    }
-
     //Gets the values for all the weapons and feeds it from a scriptable object.
     public void GetScriptableValues()
     {
@@ -212,6 +195,21 @@ public class WeaponController : MonoBehaviour
 
     void Update()
     {
+
+        m_fireTimer -=( 1*60 )*Time.deltaTime;
+        m_remainingReloadTime -= (1 * 60) * Time.deltaTime; ;
+
+        if (m_remainingReloadTime < 0 && canReload == false && willPartialReload == true)
+        {
+            print("Performed partial reload");
+            PartialReload();
+        }
+        else if (m_remainingReloadTime < 0 && canReload == false)
+        {
+            print("Performed full reload");
+            FinishReload();
+        }
+
         if (m_remainingReloadTime > 0)
         {
             canSwapWeapon = false;
