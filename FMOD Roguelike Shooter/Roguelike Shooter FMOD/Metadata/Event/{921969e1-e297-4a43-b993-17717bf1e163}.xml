@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.00.00">
 	<object class="Event" id="{921969e1-e297-4a43-b993-17717bf1e163}">
 		<property name="name">
-			<value>Jura K3 SMG</value>
+			<value>Jura_K3_SMG_Fire</value>
 		</property>
 		<property name="outputFormat">
 			<value>0</value>
@@ -53,7 +53,7 @@
 			<destination>{88352eed-ab12-4dc7-80b6-bcad73ee2929}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{b800f1a6-4937-47f6-ad00-3f5394b22f9c}</destination>
+			<destination>{e499c1bc-78ad-4a00-9960-a463ed1b30f5}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{56b29528-1202-44e7-a07a-046894c8addf}" />

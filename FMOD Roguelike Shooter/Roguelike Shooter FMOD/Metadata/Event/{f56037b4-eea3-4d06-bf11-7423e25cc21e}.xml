@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.00.00">
 	<object class="Event" id="{f56037b4-eea3-4d06-bf11-7423e25cc21e}">
 		<property name="name">
-			<value>D29 Magnum</value>
+			<value>D29_Magnum_Fire</value>
 		</property>
 		<property name="outputFormat">
 			<value>0</value>
@@ -53,7 +53,7 @@
 			<destination>{963b5ead-23fc-4115-b65c-f88b10b3e3a6}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{b800f1a6-4937-47f6-ad00-3f5394b22f9c}</destination>
+			<destination>{e499c1bc-78ad-4a00-9960-a463ed1b30f5}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{4f781fa7-7696-48f2-a4c1-d3897b4581d7}" />

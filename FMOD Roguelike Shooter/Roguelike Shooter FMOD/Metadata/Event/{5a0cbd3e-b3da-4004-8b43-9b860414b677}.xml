@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.00.00">
 	<object class="Event" id="{5a0cbd3e-b3da-4004-8b43-9b860414b677}">
 		<property name="name">
-			<value>D29_ReloadStart</value>
+			<value>D29_Reload_Start</value>
 		</property>
 		<property name="outputFormat">
 			<value>0</value>
@@ -53,7 +53,7 @@
 			<destination>{8a4015e0-0130-477e-b240-ef7835dff418}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{b800f1a6-4937-47f6-ad00-3f5394b22f9c}</destination>
+			<destination>{e499c1bc-78ad-4a00-9960-a463ed1b30f5}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{8ebef73b-2459-4054-bf43-9b13c9b49048}" />
@@ -90,10 +90,10 @@
 	<object class="MixerBusPanner" id="{8a4015e0-0130-477e-b240-ef7835dff418}" />
 	<object class="SingleSound" id="{169321dc-e82c-43f0-9f5c-d98041aa2223}">
 		<property name="length">
-			<value>2.0134602597081868</value>
+			<value>1.4431451615149811</value>
 		</property>
 		<property name="timelockedOffset">
-			<value>0.51793401881825518</value>
+			<value>1.3244813655092309</value>
 		</property>
 		<property name="pitch">
 			<value>6</value>

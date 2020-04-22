@@ -2207,7 +2207,7 @@ MonoBehaviour:
   canInput: 1
   canBeHurt: 1
   dodgeTimer: 0
-  max_dodgeTimer: 45
+  max_dodgeTimer: 30
   facingRight: 1
   isHolding: 0
   pickupIsActive: 0

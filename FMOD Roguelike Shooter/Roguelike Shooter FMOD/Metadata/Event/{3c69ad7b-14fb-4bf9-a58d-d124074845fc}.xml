@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.00.00">
 	<object class="Event" id="{3c69ad7b-14fb-4bf9-a58d-d124074845fc}">
 		<property name="name">
-			<value>A8 Sidearm</value>
+			<value>A8_Sidearm</value>
 		</property>
 		<property name="outputFormat">
 			<value>0</value>
@@ -53,7 +53,7 @@
 			<destination>{ab2e3af3-3980-4b3a-95d8-16f934a0e86d}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{b800f1a6-4937-47f6-ad00-3f5394b22f9c}</destination>
+			<destination>{e499c1bc-78ad-4a00-9960-a463ed1b30f5}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{9838b881-ba84-4f95-a7dd-0d52d597307b}" />

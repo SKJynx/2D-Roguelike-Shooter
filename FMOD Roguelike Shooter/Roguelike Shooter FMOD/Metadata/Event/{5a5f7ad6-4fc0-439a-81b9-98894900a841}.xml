@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.00.00">
 	<object class="Event" id="{5a5f7ad6-4fc0-439a-81b9-98894900a841}">
 		<property name="name">
-			<value>AM80 Rifle</value>
+			<value>AM80_Rifle_Fire</value>
 		</property>
 		<property name="outputFormat">
 			<value>0</value>
@@ -53,7 +53,7 @@
 			<destination>{cccee404-b058-49f9-b902-846506f980e1}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{b800f1a6-4937-47f6-ad00-3f5394b22f9c}</destination>
+			<destination>{e499c1bc-78ad-4a00-9960-a463ed1b30f5}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{1684a644-c171-4d4e-9754-5e3ad05aaf09}" />
@@ -93,7 +93,7 @@
 			<value>1.0600000000000001</value>
 		</property>
 		<property name="pitch">
-			<value>8</value>
+			<value>11.5</value>
 		</property>
 		<relationship name="modulators">
 			<destination>{7eeda21e-36cb-43b9-8208-10265cf503a7}</destination>

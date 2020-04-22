@@ -18,5 +18,5 @@ MonoBehaviour:
   attackFrequency: 10
   attackDamage: 20
   health: 400
-  attackSpeed: 15
+  attackSpeed: 13
   enemyType: 1

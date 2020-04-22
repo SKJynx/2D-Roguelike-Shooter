@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.00.00">
 	<object class="Event" id="{699a5e3b-4e5f-42bc-91b0-9a2560ba8fea}">
 		<property name="name">
-			<value>D29_ReloadEnd</value>
+			<value>D29_Reload_End</value>
 		</property>
 		<property name="outputFormat">
 			<value>0</value>
@@ -53,7 +53,7 @@
 			<destination>{24256486-1de0-4b6e-a33d-ef7ca74a8361}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{b800f1a6-4937-47f6-ad00-3f5394b22f9c}</destination>
+			<destination>{e499c1bc-78ad-4a00-9960-a463ed1b30f5}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{544c9268-75ac-48f8-bc1f-da98ac1b4dd9}" />

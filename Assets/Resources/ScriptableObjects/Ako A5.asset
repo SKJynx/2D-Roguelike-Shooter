@@ -26,9 +26,9 @@ MonoBehaviour:
   weaponAccuracy: 0
   critChance: 0.11
   reloadTime: 240
-  maxAmmo: 50
+  maxAmmo: 70
   bulletVelocity: 75
-  fireRate: 7.5
+  fireRate: 6.1
   criticalMultiplier: 1.6
   automatic: 1
   itemID: 104
