@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{850370b5-930d-4c58-a372-29a75850b422}">
+		<property name="assetPath">
+			<value>MRT6FireDouble.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>22.0499992</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>1.933061224489796</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{3c740bac-1932-4ba0-a337-062aa52afc15}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: event:/Weapons/Jura_K3_SMG_Fire
   guid: e169199297e2434ab99317717bf1e163
   Banks:
-  - {fileID: 6624093198861158852}
+  - {fileID: -4411652448699162025}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -56,7 +56,7 @@ MonoBehaviour:
   Path: event:/Weapons/AM80_Reload_Start
   guid: c924b0f5e2d39d499cfe47a5a9c2d12b
   Banks:
-  - {fileID: 6624093198861158852}
+  - {fileID: -4411652448699162025}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -115,7 +115,7 @@ MonoBehaviour:
   Path: event:/Weapons/GenericReload
   guid: d19fc9c144d41445bf9e0265d56e0c3b
   Banks:
-  - {fileID: 6624093198861158852}
+  - {fileID: -4411652448699162025}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -196,7 +196,7 @@ MonoBehaviour:
   Path: event:/Weapons/D29_Reload_Start
   guid: 3ebd0c5adab304408b439b860414b677
   Banks:
-  - {fileID: 6624093198861158852}
+  - {fileID: -4411652448699162025}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -204,6 +204,24 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1443
+--- !u!114 &-4411652448699162025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD Roguelike Shooter/Roguelike Shooter FMOD/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637231234164436476
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-3846061480584470185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -259,7 +277,7 @@ MonoBehaviour:
   Path: event:/Weapons/AM80_Rifle_Fire
   guid: d67a5f5ac04f9a4381b998894900a841
   Banks:
-  - {fileID: 6624093198861158852}
+  - {fileID: -4411652448699162025}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -343,11 +361,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: FMOD Roguelike Shooter/Roguelike Shooter FMOD/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637231157125711804
+  lastModified: 637231234165006480
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1612
+    Value: 1926
   Exists: 1
 --- !u!114 &-2280417750366428759
 MonoBehaviour:
@@ -364,7 +382,7 @@ MonoBehaviour:
   Path: event:/Weapons/Hiku_Maru_M10_Reload_End
   guid: ac71ba00e2b5d64e9d26fe5ea8804799
   Banks:
-  - {fileID: 6624093198861158852}
+  - {fileID: -4411652448699162025}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -441,7 +459,7 @@ MonoBehaviour:
   Path: event:/Weapons/D29_Magnum_Fire
   guid: b43760f5a3ee064dbf117423e25cc21e
   Banks:
-  - {fileID: 6624093198861158852}
+  - {fileID: -4411652448699162025}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -544,7 +562,7 @@ MonoBehaviour:
   Path: event:/Weapons/Ako_A5_Fire
   guid: 5a2347f102646542a1d2af4ac8c96d75
   Banks:
-  - {fileID: 6624093198861158852}
+  - {fileID: -4411652448699162025}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -552,6 +570,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1242
+--- !u!114 &-479058952207053609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Weapons/AMR98__Reload_End
+  m_EditorClassIdentifier: 
+  Path: event:/Weapons/AMR98__Reload_End
+  guid: e6314782dec2a04683d6a775d45ffe03
+  Banks:
+  - {fileID: -4411652448699162025}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 547
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -566,7 +607,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: -2362292707110572994}
-  - {fileID: 6624093198861158852}
+  - {fileID: -4411652448699162025}
   EditorEvents:
   - {fileID: -6537618672088833684}
   - {fileID: 5068197075852807914}
@@ -586,12 +627,18 @@ MonoBehaviour:
   - {fileID: 3739376943526643661}
   - {fileID: -2280417750366428759}
   - {fileID: 2449211447606502809}
+  - {fileID: 7638068230370516461}
+  - {fileID: 6065927628505725054}
+  - {fileID: -479058952207053609}
+  - {fileID: 9159439273097938588}
+  - {fileID: 7812593385756643435}
+  - {fileID: 4686423405807409511}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 6624093198861158852}
+  - {fileID: -4411652448699162025}
   StringsBanks:
   - {fileID: -2362292707110572994}
-  stringsBankWriteTime: 637231157125711804
+  stringsBankWriteTime: 637231234165006480
   cacheVersion: 3
 --- !u!114 &181060280861579891
 MonoBehaviour:
@@ -666,7 +713,7 @@ MonoBehaviour:
   Path: event:/Weapons/Ako_A5_Pickup
   guid: c043621a1560d7429f719ef3efed95fd
   Banks:
-  - {fileID: 6624093198861158852}
+  - {fileID: -4411652448699162025}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -689,7 +736,7 @@ MonoBehaviour:
   Path: event:/Weapons/A8_Sidearm
   guid: 7bad693cfb14f94ba58dd124074845fc
   Banks:
-  - {fileID: 6624093198861158852}
+  - {fileID: -4411652448699162025}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -748,7 +795,7 @@ MonoBehaviour:
   Path: event:/Weapons/Hiku_Maru_M10_Fire
   guid: afbc9c9e293f51478db4c19132174ddc
   Banks:
-  - {fileID: 6624093198861158852}
+  - {fileID: -4411652448699162025}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -756,6 +803,24 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 940
+--- !u!114 &2599991134909796168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD Roguelike Shooter/Roguelike Shooter FMOD/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637231232443119426
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
 --- !u!114 &3229912781719046185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -771,7 +836,7 @@ MonoBehaviour:
   Path: event:/Weapons/D29_Reload_End
   guid: 3b5e9a695f4ebc4291b09a2560ba8fea
   Banks:
-  - {fileID: 6624093198861158852}
+  - {fileID: -4411652448699162025}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -794,7 +859,7 @@ MonoBehaviour:
   Path: event:/Weapons/Hiku_Maru_M10_Reload_Start
   guid: bd5448c2c48aad45a2bf8a6893cca3d5
   Banks:
-  - {fileID: 6624093198861158852}
+  - {fileID: -4411652448699162025}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -817,7 +882,7 @@ MonoBehaviour:
   Path: event:/Weapons/AM80_Reload_End
   guid: 2b5dfa218f62004ba550fac6ec9811d6
   Banks:
-  - {fileID: 6624093198861158852}
+  - {fileID: -4411652448699162025}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -843,6 +908,29 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &4686423405807409511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Weapons/Hika_Shogu_G33A_Fire
+  m_EditorClassIdentifier: 
+  Path: event:/Weapons/Hika_Shogu_G33A_Fire
+  guid: ab13d7803cd2c8489d229bb1160a4f92
+  Banks:
+  - {fileID: -4411652448699162025}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 988
 --- !u!114 &4929508159044315476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -858,7 +946,7 @@ MonoBehaviour:
   Path: event:/Weapons/Ako_A5_Reload_Start
   guid: 3f9e2829510cc946a9e4b6d043f572b9
   Banks:
-  - {fileID: 6624093198861158852}
+  - {fileID: -4411652448699162025}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -899,7 +987,7 @@ MonoBehaviour:
   Path: event:/Weapons/PistolReload_Generic
   guid: 7207ac6522816e4d9288c709ae689dbf
   Banks:
-  - {fileID: 6624093198861158852}
+  - {fileID: -4411652448699162025}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -922,7 +1010,7 @@ MonoBehaviour:
   Path: event:/Weapons/SMGReload_Generic
   guid: e090cb55b4a0dc44a4c682237eaff418
   Banks:
-  - {fileID: 6624093198861158852}
+  - {fileID: -4411652448699162025}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -930,6 +1018,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 600
+--- !u!114 &6065927628505725054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Weapons/AMR98_Fire
+  m_EditorClassIdentifier: 
+  Path: event:/Weapons/AMR98_Fire
+  guid: d07608e36535394ca30cd20b9e724dd1
+  Banks:
+  - {fileID: -4411652448699162025}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 3516
 --- !u!114 &6306058708876771359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -963,7 +1074,7 @@ MonoBehaviour:
   Path: event:/Weapons/Ako_A5_Reload_End
   guid: 4dda9140705c6c409e53026308b5f9c9
   Banks:
-  - {fileID: 6624093198861158852}
+  - {fileID: -4411652448699162025}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -988,7 +1099,7 @@ MonoBehaviour:
   lastModified: 637231157125191828
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &7095739990384808859
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1029,6 +1140,29 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &7638068230370516461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Weapons/AMR98__Reload_Start
+  m_EditorClassIdentifier: 
+  Path: event:/Weapons/AMR98__Reload_Start
+  guid: 84fdbc6adc20064e8eebfc39cef05a74
+  Banks:
+  - {fileID: -4411652448699162025}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 153
 --- !u!114 &7696551492972056321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1051,6 +1185,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1443
+--- !u!114 &7812593385756643435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Weapons/Hika_Shogu_G33A_Reload_End
+  m_EditorClassIdentifier: 
+  Path: event:/Weapons/Hika_Shogu_G33A_Reload_End
+  guid: a649b03c5793484483da6cf5bc8ea6fb
+  Banks:
+  - {fileID: -4411652448699162025}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 697
 --- !u!114 &7962877454184681378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1091,6 +1248,24 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 365
+--- !u!114 &8520433620113984594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD Roguelike Shooter/Roguelike Shooter FMOD/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637231222975361404
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
 --- !u!114 &8616098110412362182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1131,3 +1306,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1060
+--- !u!114 &9159439273097938588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Weapons/Hika_Shogu_G33A_Reload_Start
+  m_EditorClassIdentifier: 
+  Path: event:/Weapons/Hika_Shogu_G33A_Reload_Start
+  guid: 9f85ca2177646d4684cf722d1a812ae8
+  Banks:
+  - {fileID: -4411652448699162025}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 365

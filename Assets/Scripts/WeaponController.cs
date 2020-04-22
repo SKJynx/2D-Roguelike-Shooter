@@ -76,6 +76,8 @@ public class WeaponController : MonoBehaviour
         m_Unarmed = Resources.Load<ScriptableWeapons>("ScriptableObjects/Unarmed");
         willPartialReload = false;
         canReload = true;
+        canSwapWeapon = true;
+
 
         playerController = GetComponentInParent<PlayerController>();
         playerInventory = GetComponentInParent<PlayerInventory>();
@@ -156,6 +158,11 @@ public class WeaponController : MonoBehaviour
             m_equippedAmmo = playerInventory.ammoShellCount;
         }
 
+        if (m_scriptableWeapon.ammoType == ScriptableWeapons.AmmoType.Sniper)
+        {
+            m_equippedAmmo = playerInventory.ammoSniperCount;
+        }
+
         if (m_scriptableWeapon.ammoType == ScriptableWeapons.AmmoType.Explosive)
         {
             m_equippedAmmo = playerInventory.ammoExplosiveCount;
@@ -178,6 +185,7 @@ public class WeaponController : MonoBehaviour
         else
         {
             isEquipped = false;
+            
         }
 
         if (isEquipped == false)
@@ -189,7 +197,6 @@ public class WeaponController : MonoBehaviour
         {
             if (m_weaponName != this.m_scriptableWeapon.name)
             {
-                ResetSingleLoad();
                 GetScriptableValues();
             }
         }
@@ -277,9 +284,6 @@ public class WeaponController : MonoBehaviour
     {
         if (this.m_scriptableWeapon.reloadType == ScriptableWeapons.ReloadType.Single)
         {
-            print("Loaded Single");
-
-
 
             canReload = false;
             canSwapWeapon = false;
@@ -296,8 +300,6 @@ public class WeaponController : MonoBehaviour
 
     void ResetSingleLoad()
     {
-        print("Resetting single load");
-
         StopCoroutine("SingleReload");
         GetScriptableValues();
         canReload = true;
@@ -308,7 +310,7 @@ public class WeaponController : MonoBehaviour
     {
         yield return new WaitForSeconds(1 / 60.0f * m_reloadTime);
 
-        if (m_currentAmmo != m_maxAmmo)
+        if (m_currentAmmo != m_maxAmmo && m_equippedAmmo > 0)
         {
             FMODUnity.RuntimeManager.PlayOneShot(m_reloadSFX);
 
@@ -335,6 +337,11 @@ public class WeaponController : MonoBehaviour
             if (m_scriptableWeapon.ammoType == ScriptableWeapons.AmmoType.Shell)
             {
                 playerInventory.ammoShellCount -= 1;
+            }
+
+            if (m_scriptableWeapon.ammoType == ScriptableWeapons.AmmoType.Sniper)
+            {
+                playerInventory.ammoSniperCount -= 1;
             }
 
             if (m_scriptableWeapon.ammoType == ScriptableWeapons.AmmoType.Explosive)
@@ -409,6 +416,15 @@ public class WeaponController : MonoBehaviour
             playerInventory.ammoShellCount -= playerInventory.ammoShellCount;
         }
 
+
+        if (m_scriptableWeapon.ammoType == ScriptableWeapons.AmmoType.Sniper)
+        {
+            m_currentAmmo += playerInventory.ammoSniperCount;
+
+            playerInventory.ammoSniperCount -= playerInventory.ammoSniperCount;
+        }
+
+
         if (m_scriptableWeapon.ammoType == ScriptableWeapons.AmmoType.Explosive)
         {
             m_currentAmmo += playerInventory.ammoExplosiveCount;
@@ -459,6 +475,11 @@ public class WeaponController : MonoBehaviour
             if (m_scriptableWeapon.ammoType == ScriptableWeapons.AmmoType.Shell)
             {
                 playerInventory.ammoShellCount -= m_ammoToLoad;
+            }
+
+            if (m_scriptableWeapon.ammoType == ScriptableWeapons.AmmoType.Sniper)
+            {
+                playerInventory.ammoSniperCount -= m_ammoToLoad;
             }
 
             if (m_scriptableWeapon.ammoType == ScriptableWeapons.AmmoType.Explosive)

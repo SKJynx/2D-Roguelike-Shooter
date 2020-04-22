@@ -31,6 +31,7 @@ public class BulletScript : MonoBehaviour
         {
             if (collision.CompareTag("Enemy") && gameObject.CompareTag("Bullet"))
             {
+                print("Hit enemy");
                 collision.gameObject.GetComponent<HealthManager>().TakeDamage((int)m_bulletDamage);
                 PlayerStatsManager.playerDamageDealt += (int)m_bulletDamage;
                 PlayerStatsManager.playerComboDamage += (int)m_bulletDamage;

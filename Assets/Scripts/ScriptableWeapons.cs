@@ -34,6 +34,7 @@ public class ScriptableWeapons : ScriptableObject
     public float reloadTime;
     public int maxAmmo;
 
+    public int startingAmmo;
 
     public int projectileCount;
 

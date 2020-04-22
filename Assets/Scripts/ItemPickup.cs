@@ -6,6 +6,8 @@ public class ItemPickup : MonoBehaviour
 {
     SpriteRenderer sr;
 
+    public int heldAmmo;
+
     public ScriptableWeapons scriptableWeapon;
 
     void Start()
@@ -56,7 +58,7 @@ public class ItemPickup : MonoBehaviour
 
                 playerInventory.savedWeapon[playerController.currentWeaponSlot].scriptableWeapon = this.scriptableWeapon;
 
-                playerWeapon.m_currentAmmo = this.scriptableWeapon.maxAmmo;
+                playerWeapon.m_currentAmmo = this.heldAmmo;
             }
 
             Destroy(this.gameObject);

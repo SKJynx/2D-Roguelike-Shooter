@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c344f31108acdee4ca025b9d70921f51, type: 3}
+  m_Name: AMR98 Rifle
+  m_EditorClassIdentifier: 
+  weaponSprite: {fileID: -6947532861148852748, guid: c29486488fce4634988257901ab9ec9f,
+    type: 3}
+  bulletType: {fileID: 2916614864245653124, guid: 7f8bf26f704381b489b98df3d827aa40,
+    type: 3}
+  weaponFireSound: event:/Weapons/AMR98_Fire
+  reloadSound: event:/Weapons/AMR98__Reload_Start
+  endReloadSound: event:/Weapons/AMR98__Reload_End
+  weaponPickupSound: event:/Weapons/AMR98__Reload_End
+  weaponName: AMR98 Rifle
+  weaponDamage: 78
+  weaponCost: 580
+  weaponAccuracy: 0.9
+  critChance: 21
+  reloadTime: 48
+  maxAmmo: 4
+  startingAmmo: 4
+  projectileCount: 1
+  bulletVelocity: 103
+  fireRate: 104
+  criticalMultiplier: 0
+  automatic: 0
+  itemID: 106
+  weaponType: 5
+  ammoType: 4
+  reloadType: 1

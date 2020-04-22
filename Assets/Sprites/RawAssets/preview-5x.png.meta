@@ -178,7 +178,7 @@ TextureImporter:
     second: preview-5x_57
   - first:
       213: -4152490728065668214
-    second: preview-5x_58
+    second: Hika Shogu G33A
   - first:
       213: -5338175250634397390
     second: preview-5x_59
@@ -1620,15 +1620,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: preview-5x_58
+      name: Hika Shogu G33A
       rect:
         serializedVersion: 2
         x: 220
         y: 435
         width: 65
         height: 30
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.32307693, y: 0.26666668}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

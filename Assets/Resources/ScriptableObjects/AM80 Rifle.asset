@@ -28,10 +28,11 @@ MonoBehaviour:
   reloadTime: 130
   maxAmmo: 30
   projectileCount: 1
-  bulletVelocity: 24
+  bulletVelocity: 38
   fireRate: 7
   criticalMultiplier: 1.8
   automatic: 1
   itemID: 102
   weaponType: 4
   ammoType: 2
+  reloadType: 0

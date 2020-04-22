@@ -33,6 +33,8 @@ public class PlayerController : MonoBehaviour
     GameObject heldItem;
     [SerializeField]
     GameObject playerSprite;
+    [SerializeField]
+    GameObject blankItemPrefab;
 
     Vector2 movement;
 
@@ -81,7 +83,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-;
+        ;
         dodgeTimer -= (1 * 60) * Time.deltaTime;
 
         if (canInput == true)
@@ -102,7 +104,7 @@ public class PlayerController : MonoBehaviour
         LookAtReticle();
 
         anim.SetFloat("horizontalSpeed", Mathf.Abs(rb2d.velocity.x));
-        anim.SetFloat("verticalSpeed", Mathf.Abs(rb2d.velocity.y));   
+        anim.SetFloat("verticalSpeed", Mathf.Abs(rb2d.velocity.y));
     }
 
     //Experimental
@@ -115,7 +117,7 @@ public class PlayerController : MonoBehaviour
             if (Time.timeScale > 0.3f)
             {
                 Time.timeScale -= 2.0f * Time.deltaTime;
-            }      
+            }
             else
             {
                 Time.timeScale = 0.3f;
@@ -130,7 +132,7 @@ public class PlayerController : MonoBehaviour
 
     public void CheckHealth()
     {
-        if(PlayerStatsManager.playerHealth <= 0)
+        if (PlayerStatsManager.playerHealth <= 0)
         {
             Destroy(gameObject);
         }
@@ -245,8 +247,12 @@ public class PlayerController : MonoBehaviour
     public void OnDropItem()
     {
         // Simple destroys the current ScriptableWeapon enabled in the inventory 
-        if(playerInventory.savedWeapon[currentWeaponSlot].scriptableWeapon != null)
+        if (playerInventory.savedWeapon[currentWeaponSlot].scriptableWeapon != null && weaponController.canSwapWeapon == true)
         {
+            GameObject droppedWeapon = Instantiate(blankItemPrefab, transform.position, Quaternion.identity);
+            droppedWeapon.GetComponent<ItemPickup>().scriptableWeapon = weaponController.m_scriptableWeapon;
+            droppedWeapon.GetComponent<ItemPickup>().heldAmmo = weaponController.m_currentAmmo;
+
             playerInventory.savedWeapon[currentWeaponSlot].scriptableWeapon = null;
         }
     }

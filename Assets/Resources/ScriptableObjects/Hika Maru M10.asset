@@ -18,18 +18,19 @@ MonoBehaviour:
     type: 3}
   weaponFireSound: event:/Weapons/Hiku_Maru_M10_Fire
   reloadSound: event:/Weapons/Hiku_Maru_M10_Reload_Start
-  endReloadSound: event:/Weapons/Hiku_Maru_M10_End
-  weaponPickupSound: event:/Weapons/Hiku_Maru_M10_End
+  endReloadSound: event:/Weapons/Hiku_Maru_M10_Reload_End
+  weaponPickupSound: event:/Weapons/Hiku_Maru_M10_Reload_End
   weaponName: Hika Maru M10
   weaponDamage: 14
   weaponCost: 340
   weaponAccuracy: 8.1
   critChance: 0.9
-  reloadTime: 27
+  reloadTime: 30
   maxAmmo: 8
-  projectileCount: 9
-  bulletVelocity: 37
-  fireRate: 38
+  startingAmmo: 0
+  projectileCount: 12
+  bulletVelocity: 42
+  fireRate: 71
   criticalMultiplier: 1.2
   automatic: 1
   itemID: 105
