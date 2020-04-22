@@ -95,7 +95,6 @@ public class RangedAIMotor : MonoBehaviour
 
     void StartReload()
     {
-        print("cannont reloaded");
         shotsToFire = maxShotsAvailable;
     }
 

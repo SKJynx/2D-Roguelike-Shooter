@@ -50,8 +50,4 @@ public class CameraFollow : MonoBehaviour
             camSizeX * Screen.height / Screen.width + 1, minSizeY);
     }
 
-    void Death()
-    {
-        Destroy(gameObject);
-    }
 }

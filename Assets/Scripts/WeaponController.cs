@@ -190,13 +190,12 @@ public class WeaponController : MonoBehaviour
 
         m_scriptableWeapon = playerInventory.savedWeapon[playerController.currentWeaponSlot].scriptableWeapon;
 
-        //m_scriptableWeapon = playerInventory.scriptableWeaponSlot[playerController.currentWeaponSlot];
     }
 
     void Update()
     {
 
-        m_fireTimer -=( 1*60 )*Time.deltaTime;
+        m_fireTimer -= (1 * 60) * Time.deltaTime;
         m_remainingReloadTime -= (1 * 60) * Time.deltaTime; ;
 
         if (m_remainingReloadTime < 0 && canReload == false && willPartialReload == true)
@@ -244,7 +243,7 @@ public class WeaponController : MonoBehaviour
         // SemiFire
         if (m_fireTimer < 0 && m_currentAmmo > 0 && m_remainingReloadTime < 0 && m_autofire == false && gameObject.GetComponentInParent<PlayerController>().isHolding == 1)
         {
-            
+
             m_currentAmmo -= 1;
             m_fireTimer = m_fireRate;
             FireBullet();
@@ -398,16 +397,28 @@ public class WeaponController : MonoBehaviour
         GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity) as GameObject;
         {
 
-            // TODO - Add proper bullet rotation, otherwise bullets won't be able to inherit accuracy
             Vector3 target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-            Vector2 bulletPath = (target - bullet.transform.position);
+            //Vector2 bulletPath = (target - bullet.transform.position);
 
-            bullet.GetComponent<Rigidbody2D>().velocity = bulletPath.normalized * m_bulletSpeed;
+            //bullet.GetComponent<Rigidbody2D>().velocity = bulletPath.normalized * m_bulletSpeed;
 
-            Vector3 difference = target - transform.position;
+            Vector3 difference = target - bullet.transform.position;
+
+            //accuracyCoefficient current just affects a trajectory from a vector, quick and dirty way to get it done until a better system is implemented.
+            float accuracyCoefficient = Random.Range(-m_weaponAccuracy, m_weaponAccuracy);
+
+
+
             float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ);
+            bullet.transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ + accuracyCoefficient);
+
+
+
+            
+
+            bullet.GetComponent<Rigidbody2D>().AddForce(bullet.transform.right * m_bulletSpeed * 100);
+
 
             float critChance = Random.Range(0, 100);
 

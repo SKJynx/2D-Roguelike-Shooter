@@ -255,7 +255,7 @@ public class PlayerController : MonoBehaviour
     // DEBUG TOOLS
     void AddAmmoCheat()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.Z))
         {
             playerInventory.ammoLightCount += 200;
             playerInventory.ammoMagnumCount += 30;

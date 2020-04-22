@@ -23,7 +23,7 @@ MonoBehaviour:
   weaponName: A8 Sidearm
   weaponDamage: 9
   weaponCost: 40
-  weaponAccuracy: 0
+  weaponAccuracy: 0.03
   critChance: 7
   reloadTime: 65
   maxAmmo: 17

@@ -35,7 +35,7 @@ public class AmmoCountText : MonoBehaviour
         }
         else
         {
-            m_ammoCount.text = $"Unarmed";
+            m_ammoCount.text = $"Unarmed\nHP: {PlayerStatsManager.playerHealth}";
         }
 
 
