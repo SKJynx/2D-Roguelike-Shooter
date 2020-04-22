@@ -96,7 +96,6 @@ public class PlayerController : MonoBehaviour
 
 
         SlowMotionAbility();
-        print(Time.timeScale);
         // -------------------------------
 
         FixWeaponOrientation();
@@ -115,7 +114,7 @@ public class PlayerController : MonoBehaviour
         {
             if (Time.timeScale > 0.3f)
             {
-                Time.timeScale -= 1.0f * Time.deltaTime;
+                Time.timeScale -= 2.0f * Time.deltaTime;
             }      
             else
             {
