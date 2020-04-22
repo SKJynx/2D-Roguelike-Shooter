@@ -43,10 +43,12 @@ public class WeaponController : MonoBehaviour
     public float m_reloadTime;
     public int m_currentAmmo;
     public int m_maxAmmo;
+    public int m_projectileCount;
     public float m_fireRate;
     public float m_bulletSpeed;
     public float m_critMultiplier;
     public bool m_autofire;
+
 
     [SerializeField]
     bool willPartialReload;
@@ -82,7 +84,7 @@ public class WeaponController : MonoBehaviour
         firingAnimator = firingAnimation.GetComponentInChildren<Animator>();
     }
 
-    //Gets the values for all the weapons and feeds it from a scriptable object.
+    //Gets the values for all the weapons and feeds it from the attached scriptable object.
     public void GetScriptableValues()
     {
         if (m_scriptableWeapon != null)
@@ -91,6 +93,7 @@ public class WeaponController : MonoBehaviour
 
             m_weaponName = this.m_scriptableWeapon.weaponName;
 
+
             m_weaponDamage = this.m_scriptableWeapon.weaponDamage;
             m_weaponCost = this.m_scriptableWeapon.weaponCost;
             m_weaponAccuracy = this.m_scriptableWeapon.weaponAccuracy;
@@ -98,11 +101,13 @@ public class WeaponController : MonoBehaviour
             m_reloadTime = this.m_scriptableWeapon.reloadTime;
             m_maxAmmo = this.m_scriptableWeapon.maxAmmo;
             //m_currentAmmo = this.m_scriptableWeapon.maxAmmo;
+            m_projectileCount = this.m_scriptableWeapon.projectileCount;
             m_fireRate = this.m_scriptableWeapon.fireRate;
             m_bulletSpeed = this.m_scriptableWeapon.bulletVelocity;
             m_autofire = this.m_scriptableWeapon.automatic;
             m_critMultiplier = this.m_scriptableWeapon.criticalMultiplier;
             m_remainingReloadTime = 0;
+
 
             // Sound effects get passed through [FMODUnity.EventRef]
             m_fireSFX = this.m_scriptableWeapon.weaponFireSound;
@@ -184,6 +189,7 @@ public class WeaponController : MonoBehaviour
         {
             if (m_weaponName != this.m_scriptableWeapon.name)
             {
+                ResetSingleLoad();
                 GetScriptableValues();
             }
         }
@@ -194,26 +200,25 @@ public class WeaponController : MonoBehaviour
 
     void Update()
     {
-
         m_fireTimer -= (1 * 60) * Time.deltaTime;
         m_remainingReloadTime -= (1 * 60) * Time.deltaTime; ;
 
-        if (m_remainingReloadTime < 0 && canReload == false && willPartialReload == true)
+        if (m_remainingReloadTime < 0 && canReload == false && willPartialReload == true && this.m_scriptableWeapon.reloadType == ScriptableWeapons.ReloadType.Magazine)
         {
             print("Performed partial reload");
             PartialReload();
         }
-        else if (m_remainingReloadTime < 0 && canReload == false)
+        else if (m_remainingReloadTime < 0 && canReload == false && this.m_scriptableWeapon.reloadType == ScriptableWeapons.ReloadType.Magazine)
         {
             print("Performed full reload");
             FinishReload();
         }
 
-        if (m_remainingReloadTime > 0)
+        if (m_remainingReloadTime > 0 && this.m_scriptableWeapon.reloadType == ScriptableWeapons.ReloadType.Magazine)
         {
             canSwapWeapon = false;
         }
-        else
+        else if (m_remainingReloadTime > 0 && this.m_scriptableWeapon.reloadType == ScriptableWeapons.ReloadType.Magazine)
         {
             canSwapWeapon = true;
         }
@@ -229,13 +234,12 @@ public class WeaponController : MonoBehaviour
         // Autofire
         if (m_fireTimer < 0 && m_currentAmmo > 0 && m_remainingReloadTime < 0 && m_autofire == true && gameObject.GetComponentInParent<PlayerController>().isHolding == 1)
         {
-
+            ResetSingleLoad();
             m_currentAmmo -= 1;
             m_fireTimer = m_fireRate;
             FireBullet();
             playerInventory.UpdateAmmo();
         }
-
     }
 
     public void shootWeapon()
@@ -243,15 +247,12 @@ public class WeaponController : MonoBehaviour
         // SemiFire
         if (m_fireTimer < 0 && m_currentAmmo > 0 && m_remainingReloadTime < 0 && m_autofire == false && gameObject.GetComponentInParent<PlayerController>().isHolding == 1)
         {
-
+            ResetSingleLoad();
             m_currentAmmo -= 1;
             m_fireTimer = m_fireRate;
             FireBullet();
             playerInventory.UpdateAmmo();
-
         }
-
-
     }
 
     void OnReload()
@@ -274,10 +275,97 @@ public class WeaponController : MonoBehaviour
 
     void StartReload()
     {
-        FMODUnity.RuntimeManager.PlayOneShot(m_reloadSFX);
+        if (this.m_scriptableWeapon.reloadType == ScriptableWeapons.ReloadType.Single)
+        {
+            print("Loaded Single");
 
-        canReload = false;
-        m_remainingReloadTime = m_reloadTime;
+
+
+            canReload = false;
+            canSwapWeapon = false;
+            StartCoroutine("SingleReload");
+        }
+        else if (this.m_scriptableWeapon.reloadType == ScriptableWeapons.ReloadType.Magazine)
+        {
+            FMODUnity.RuntimeManager.PlayOneShot(m_reloadSFX);
+
+            canReload = false;
+            m_remainingReloadTime = m_reloadTime;
+        }
+    }
+
+    void ResetSingleLoad()
+    {
+        print("Resetting single load");
+
+        StopCoroutine("SingleReload");
+        GetScriptableValues();
+        canReload = true;
+        canSwapWeapon = true;
+    }
+
+    IEnumerator SingleReload()
+    {
+        yield return new WaitForSeconds(1 / 60.0f * m_reloadTime);
+
+        if (m_currentAmmo != m_maxAmmo)
+        {
+            FMODUnity.RuntimeManager.PlayOneShot(m_reloadSFX);
+
+            if (m_scriptableWeapon.ammoType == ScriptableWeapons.AmmoType.Light)
+            {
+                playerInventory.ammoLightCount -= 1;
+            }
+
+            if (m_scriptableWeapon.ammoType == ScriptableWeapons.AmmoType.Magnum)
+            {
+                playerInventory.ammoMagnumCount -= 1;
+            }
+
+            if (m_scriptableWeapon.ammoType == ScriptableWeapons.AmmoType.Assault)
+            {
+                playerInventory.ammoAssaultCount -= 1;
+            }
+
+            if (m_scriptableWeapon.ammoType == ScriptableWeapons.AmmoType.Heavy)
+            {
+                playerInventory.ammoHeavyCount -= 1;
+            }
+
+            if (m_scriptableWeapon.ammoType == ScriptableWeapons.AmmoType.Shell)
+            {
+                playerInventory.ammoShellCount -= 1;
+            }
+
+            if (m_scriptableWeapon.ammoType == ScriptableWeapons.AmmoType.Explosive)
+            {
+                playerInventory.ammoExplosiveCount -= 1;
+            }
+
+            if (m_scriptableWeapon.ammoType == ScriptableWeapons.AmmoType.Energy)
+            {
+                playerInventory.ammoEnergyCount -= 1;
+            }
+
+            m_currentAmmo += 1;
+
+            GetAmmo();
+
+        }
+
+        if (m_currentAmmo != m_maxAmmo)
+        {
+ 
+            yield return StartCoroutine("StartReload");
+        }
+        else if (m_currentAmmo >= m_maxAmmo)
+        {
+
+            canReload = true;
+            canSwapWeapon = true;
+
+            GetAmmo();
+        }   
     }
 
     //Grabs the ammo from the correct ammo pool when doing a partial reload, and checks to make sure you don't go below 0.
@@ -337,55 +425,60 @@ public class WeaponController : MonoBehaviour
 
         canReload = true;
         willPartialReload = false;
+        canSwapWeapon = true;
         GetAmmo();
     }
 
 
     void FinishReload()
     {
-
-        FMODUnity.RuntimeManager.PlayOneShot(m_endReloadSFX);
-
-        if (m_scriptableWeapon.ammoType == ScriptableWeapons.AmmoType.Light)
+        if (this.m_scriptableWeapon.reloadType == ScriptableWeapons.ReloadType.Magazine)
         {
-            playerInventory.ammoLightCount -= m_ammoToLoad;
+            FMODUnity.RuntimeManager.PlayOneShot(m_endReloadSFX);
+
+            if (m_scriptableWeapon.ammoType == ScriptableWeapons.AmmoType.Light)
+            {
+                playerInventory.ammoLightCount -= m_ammoToLoad;
+            }
+
+            if (m_scriptableWeapon.ammoType == ScriptableWeapons.AmmoType.Magnum)
+            {
+                playerInventory.ammoMagnumCount -= m_ammoToLoad;
+            }
+
+            if (m_scriptableWeapon.ammoType == ScriptableWeapons.AmmoType.Assault)
+            {
+                playerInventory.ammoAssaultCount -= m_ammoToLoad;
+            }
+
+            if (m_scriptableWeapon.ammoType == ScriptableWeapons.AmmoType.Heavy)
+            {
+                playerInventory.ammoHeavyCount -= m_ammoToLoad;
+            }
+
+            if (m_scriptableWeapon.ammoType == ScriptableWeapons.AmmoType.Shell)
+            {
+                playerInventory.ammoShellCount -= m_ammoToLoad;
+            }
+
+            if (m_scriptableWeapon.ammoType == ScriptableWeapons.AmmoType.Explosive)
+            {
+                playerInventory.ammoExplosiveCount -= m_ammoToLoad;
+            }
+
+            if (m_scriptableWeapon.ammoType == ScriptableWeapons.AmmoType.Energy)
+            {
+                playerInventory.ammoEnergyCount -= m_ammoToLoad;
+            }
+
+
+            m_currentAmmo = m_maxAmmo;
+            canReload = true;
+            canSwapWeapon = true;
+
+            GetAmmo();
         }
 
-        if (m_scriptableWeapon.ammoType == ScriptableWeapons.AmmoType.Magnum)
-        {
-            playerInventory.ammoMagnumCount -= m_ammoToLoad;
-        }
-
-        if (m_scriptableWeapon.ammoType == ScriptableWeapons.AmmoType.Assault)
-        {
-            playerInventory.ammoAssaultCount -= m_ammoToLoad;
-        }
-
-        if (m_scriptableWeapon.ammoType == ScriptableWeapons.AmmoType.Heavy)
-        {
-            playerInventory.ammoHeavyCount -= m_ammoToLoad;
-        }
-
-        if (m_scriptableWeapon.ammoType == ScriptableWeapons.AmmoType.Shell)
-        {
-            playerInventory.ammoShellCount -= m_ammoToLoad;
-        }
-
-        if (m_scriptableWeapon.ammoType == ScriptableWeapons.AmmoType.Explosive)
-        {
-            playerInventory.ammoExplosiveCount -= m_ammoToLoad;
-        }
-
-        if (m_scriptableWeapon.ammoType == ScriptableWeapons.AmmoType.Energy)
-        {
-            playerInventory.ammoEnergyCount -= m_ammoToLoad;
-        }
-
-
-        m_currentAmmo = m_maxAmmo;
-        canReload = true;
-
-        GetAmmo();
     }
 
     void FireBullet()
@@ -393,43 +486,43 @@ public class WeaponController : MonoBehaviour
         anim.Play("Player_Weapon_Fire", -1, 0);
         firingAnimator.Play("Weapon_Rifle_Fire", -1, 0);
 
-
-        GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity) as GameObject;
+        for (int i = 0; i < m_projectileCount; i++)
         {
-
-            Vector3 target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-            //Vector2 bulletPath = (target - bullet.transform.position);
-
-            //bullet.GetComponent<Rigidbody2D>().velocity = bulletPath.normalized * m_bulletSpeed;
-
-            Vector3 difference = target - bullet.transform.position;
-
-            //accuracyCoefficient current just affects a trajectory from a vector, quick and dirty way to get it done until a better system is implemented.
-            float accuracyCoefficient = Random.Range(-m_weaponAccuracy, m_weaponAccuracy);
-
-
-
-            float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-            bullet.transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ + accuracyCoefficient);
-
-
-
-            
-
-            bullet.GetComponent<Rigidbody2D>().AddForce(bullet.transform.right * m_bulletSpeed * 100);
-
-
-            float critChance = Random.Range(0, 100);
-
-            if (critChance <= m_critChance)
+            GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity) as GameObject;
             {
-                bullet.GetComponent<BulletScript>().m_bulletDamage = m_weaponDamage * m_critMultiplier;
+
+                Vector3 target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+
+                Vector3 difference = target - bullet.transform.position;
+
+                //accuracyCoefficient is calculated by taking the value for accuracy, randomizing it, and then adding it to the rotationZ in the bullet rotation
+                float accuracyCoefficient = Random.Range(-m_weaponAccuracy, m_weaponAccuracy);
+
+
+
+                float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+                bullet.transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ + accuracyCoefficient);
+
+
+
+
+
+                bullet.GetComponent<Rigidbody2D>().AddForce(bullet.transform.right * m_bulletSpeed * 100);
+
+
+                float critChance = Random.Range(0, 100);
+
+                if (critChance <= m_critChance)
+                {
+                    bullet.GetComponent<BulletScript>().m_bulletDamage = m_weaponDamage * m_critMultiplier;
+                }
+                else
+                {
+                    bullet.GetComponent<BulletScript>().m_bulletDamage = m_weaponDamage;
+                }
             }
-            else
-            {
-                bullet.GetComponent<BulletScript>().m_bulletDamage = m_weaponDamage;
-            }
+
 
         }
     }

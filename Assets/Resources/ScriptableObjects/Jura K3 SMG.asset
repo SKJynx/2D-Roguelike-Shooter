@@ -23,10 +23,11 @@ MonoBehaviour:
   weaponName: Jura K3 SMG
   weaponDamage: 7
   weaponCost: 340
-  weaponAccuracy: 0
+  weaponAccuracy: 4.7
   critChance: 2
   reloadTime: 105
   maxAmmo: 40
+  projectileCount: 1
   bulletVelocity: 21
   fireRate: 4.2
   criticalMultiplier: 1.3

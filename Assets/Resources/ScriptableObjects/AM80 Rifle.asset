@@ -23,10 +23,11 @@ MonoBehaviour:
   weaponName: AM80 Rifle
   weaponDamage: 14
   weaponCost: 280
-  weaponAccuracy: 0
+  weaponAccuracy: 4.9
   critChance: 11
   reloadTime: 130
   maxAmmo: 30
+  projectileCount: 1
   bulletVelocity: 24
   fireRate: 7
   criticalMultiplier: 1.8

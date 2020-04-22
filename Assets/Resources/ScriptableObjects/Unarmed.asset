@@ -25,6 +25,7 @@ MonoBehaviour:
   critChance: 0
   reloadTime: 0
   maxAmmo: 0
+  projectileCount: 0
   bulletVelocity: 0
   fireRate: 0
   criticalMultiplier: 0
@@ -32,3 +33,4 @@ MonoBehaviour:
   itemID: 99
   weaponType: 10
   ammoType: 9
+  reloadType: 2

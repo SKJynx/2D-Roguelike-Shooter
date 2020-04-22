@@ -100,7 +100,7 @@ TextureImporter:
     second: preview-5x_31
   - first:
       213: 7919415677568589419
-    second: preview-5x_32
+    second: Hika Maru M10
   - first:
       213: -2508457418215916995
     second: preview-5x_33
@@ -1074,15 +1074,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: preview-5x_32
+      name: Hika Maru M10
       rect:
         serializedVersion: 2
         x: 15
         y: 670
         width: 85
         height: 25
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.2, y: 0.32}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2446,8 +2446,8 @@ TextureImporter:
         y: 45
         width: 65
         height: 30
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.2769231, y: 0.26666668}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

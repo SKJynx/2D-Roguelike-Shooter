@@ -23,6 +23,8 @@ public class ScriptableWeapons : ScriptableObject
 
     public float weaponDamage;
     public float weaponCost;
+
+    //Accuracy in degrees
     public float weaponAccuracy;
 
     //100 = 100% crit chance
@@ -31,6 +33,9 @@ public class ScriptableWeapons : ScriptableObject
     //In ticks
     public float reloadTime;
     public int maxAmmo;
+
+
+    public int projectileCount;
 
     //50 is *really* high
     public float bulletVelocity;
@@ -41,6 +46,7 @@ public class ScriptableWeapons : ScriptableObject
 
     //Can the weapon fire full auto?
     public bool automatic;
+
 
     public int itemID;
 
@@ -74,6 +80,14 @@ public class ScriptableWeapons : ScriptableObject
         None
     }
     public AmmoType ammoType;
+
+    public enum ReloadType
+    {
+        Magazine,
+        Single,
+        Charging
+    }
+    public ReloadType reloadType;
 
 }
 

@@ -23,10 +23,11 @@ MonoBehaviour:
   weaponName: Ako A5
   weaponDamage: 13
   weaponCost: 480
-  weaponAccuracy: 0
+  weaponAccuracy: 5
   critChance: 0.11
   reloadTime: 240
   maxAmmo: 70
+  projectileCount: 1
   bulletVelocity: 75
   fireRate: 6.1
   criticalMultiplier: 1.6

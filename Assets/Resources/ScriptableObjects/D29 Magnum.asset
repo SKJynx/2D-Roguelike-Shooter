@@ -23,10 +23,11 @@ MonoBehaviour:
   weaponName: D29 Magnum
   weaponDamage: 27
   weaponCost: 180
-  weaponAccuracy: 3
+  weaponAccuracy: 2.8
   critChance: 18
   reloadTime: 90
   maxAmmo: 6
+  projectileCount: 1
   bulletVelocity: 20
   fireRate: 30
   criticalMultiplier: 2.5
