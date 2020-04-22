@@ -23,13 +23,13 @@ MonoBehaviour:
   weaponName: AMR98 Rifle
   weaponDamage: 78
   weaponCost: 580
-  weaponAccuracy: 0.9
+  weaponAccuracy: 0.4
   critChance: 21
   reloadTime: 48
   maxAmmo: 4
   startingAmmo: 4
   projectileCount: 1
-  bulletVelocity: 103
+  bulletVelocity: 81
   fireRate: 104
   criticalMultiplier: 0
   automatic: 0
